@@ -1,0 +1,24 @@
+.footer {
+  @apply pt-3 bg-slate-500 rounded-t-lg 2xl:mx-2;
+  .row {
+    @apply lg:grid grid-cols-3 gap-4;
+  }
+  .item {
+    @apply px-2 mb-3 last:mb-0;
+    h3 {
+      @apply uppercase p-3 mb-2 bg-slate-400 rounded-md sm:text-center;
+    }
+    .list {
+      @apply flex flex-col;
+      button {
+        text-transform: none;
+      }
+      a {
+        @apply text-left;
+      }
+    }
+  }
+  .copyright {
+    @apply mt-1 py-2 text-center bg-slate-400;
+  }
+}

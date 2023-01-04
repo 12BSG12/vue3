@@ -1,0 +1,23 @@
+.header {
+  @apply pt-2 mb-4 sm:mb-9;
+}
+.topBtn {
+  @apply flex justify-between items-center mb-5 sm:block;
+  button {
+    @apply sm:mr-3;
+  }
+}
+.info {
+  @apply flex flex-col items-center sm:flex-row sm:justify-between;
+  img {
+    @apply w-80 h-28 mb-4 sm:mb-0;
+  }
+}
+.list {
+  li {
+    @apply flex items-center mb-2 last:mb-0;
+    i {
+      @apply mr-2;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.cart {
+  @apply relative w-full cursor-pointer rounded-lg shadow-md shadow-slate-900 transition 
+  ease-in-out duration-200 hover:scale-105;
+  .info {
+    @apply absolute flex items-center;
+    .date {
+      @apply py-1 px-2 bg-slate-400 rounded-tl-lg;
+    }
+    .month {
+      @apply py-1 px-2 bg-slate-500 rounded-br-lg;
+    }
+  }
+  img {
+    @apply rounded-lg;
+  }
+  .description {
+    @apply absolute bottom-0 w-full pl-3 py-2 bg-slate-400 rounded-b-lg;
+  }
+}

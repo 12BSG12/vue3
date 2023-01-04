@@ -1,0 +1,14 @@
+.list {
+  @apply flex items-center mb-2;
+  li {
+    @apply my-5 mr-2 last:mr-0  after:content-['/'] 
+    after:pl-2 last:after:content-[''];
+    a {
+      @apply cursor-pointer px-4 py-2 bg-slate-400 rounded-full transition ease-in-out duration-150 
+      hover:text-cyan-600 hover:bg-slate-300 disabled:bg-slate-200;
+    }
+  }
+}
+.disabled {
+  @apply pointer-events-none cursor-default opacity-60;
+}

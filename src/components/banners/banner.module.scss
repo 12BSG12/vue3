@@ -1,0 +1,6 @@
+.banner {
+  @apply rounded-lg shadow-lg shadow-slate-900 hover:animate-pulse;
+  a {
+    @apply h-full;
+  }
+}
