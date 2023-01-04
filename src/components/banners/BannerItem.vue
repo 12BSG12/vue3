@@ -15,7 +15,7 @@ defineProps<{
     :show-arrows="false"
     hide-delimiter-background
   >
-    <a :href="href">
+    <a :href="href" v-for="(item, i) in 5" :key="i">
       <v-carousel-item :src="imgSrc" cover> </v-carousel-item>
     </a>
   </v-carousel>
