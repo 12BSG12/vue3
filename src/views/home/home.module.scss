@@ -2,7 +2,7 @@
   @apply my-2;
 }
 .carousel {
-  @apply hidden sm:block rounded-lg shadow-md shadow-slate-900;
+  @apply hidden lg:block rounded-lg shadow-md shadow-slate-900;
   .carouselItem {
     @apply h-full bg-slate-400;
   }
@@ -30,11 +30,11 @@
       @apply text-2xl uppercase mb-2;
     }
     .cart {
-      @apply grid grid-cols-2 gap-4 mt-4 md:grid-cols-3;
+      @apply grid grid-cols-2 gap-2 mt-4 md:grid-cols-3 md:gap-4;
     }
   }
   .banners {
-    @apply hidden xl:grid grid-cols-1 gap-3 mt-12 w-1/4 h-1/3 ml-5 ;
+    @apply hidden xl:grid grid-cols-1 gap-3 mt-12 w-1/4 h-1/3 ml-5;
     .bannerTitle {
       @apply relative;
       p {
@@ -43,6 +43,6 @@
     }
   }
 }
-.pagination{
-  @apply text-center my-3 sm:mt-0
+.pagination {
+  @apply text-center my-3 sm:mt-0;
 }

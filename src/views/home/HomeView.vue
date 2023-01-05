@@ -4,7 +4,7 @@ import SlideItem from "./SlideItem.vue";
 import CartItem from "@/components/cart/CartItem.vue";
 import BannerItem from "@/components/banners/BannerItem.vue";
 
-import { reactive, ref } from "vue";
+import { onMounted, reactive, ref } from "vue";
 const store = reactive({
   slides: [
     {
@@ -20,6 +20,18 @@ const store = reactive({
   ],
 });
 const page = ref(1);
+const width = ref(0);
+const density = ref<"default" | "comfortable" | "compact">("default");
+const totalVisible = ref(7);
+
+const setWidth = () => {
+  width.value = window.innerWidth;
+  width.value < 640 ? (density.value = "compact") : (density.value = "default");
+  width.value < 400 ? (totalVisible.value = 4) : (totalVisible.value = 7);
+};
+onMounted(() => {
+  window.addEventListener("resize", setWidth);
+});
 </script>
 <template>
   <div :class="styles.home">
@@ -117,8 +129,9 @@ const page = ref(1);
       <v-pagination
         v-model="page"
         :length="15"
-        :total-visible="7"
+        :total-visible="totalVisible"
         rounded="circle"
+        :density="density"
       ></v-pagination>
     </div>
   </div>

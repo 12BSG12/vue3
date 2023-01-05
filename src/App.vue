@@ -8,7 +8,7 @@ import QuicklyMenu from "./components/menu/QuicklyMenu.vue";
 </script>
 
 <template>
-  <div class="bg-slate-200">
+  <div class="bg">
     <div class="wrapper">
       <div class="px-2">
         <Header msg="You did it!" />
@@ -26,6 +26,9 @@ import QuicklyMenu from "./components/menu/QuicklyMenu.vue";
 </template>
 
 <style lang="scss">
+.bg {
+  @apply relative before:absolute bg-slate-200 left-0 right-0 bottom-0 top-0;
+}
 .wrapper {
   min-height: 100vh;
   display: grid;
