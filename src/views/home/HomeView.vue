@@ -4,7 +4,8 @@ import SlideItem from "./SlideItem.vue";
 import CartItem from "@/components/cart/CartItem.vue";
 import BannerItem from "@/components/banners/BannerItem.vue";
 
-import { onMounted, reactive, ref } from "vue";
+import { watch, reactive, ref } from "vue";
+import { useWindow } from "@/hooks/useWindow";
 const store = reactive({
   slides: [
     {
@@ -19,18 +20,14 @@ const store = reactive({
     },
   ],
 });
-const page = ref(1);
-const width = ref(0);
+const { width } = useWindow();
 const density = ref<"default" | "comfortable" | "compact">("default");
 const totalVisible = ref(7);
+const page = ref(1);
 
-const setWidth = () => {
-  width.value = window.innerWidth;
-  width.value < 640 ? (density.value = "compact") : (density.value = "default");
-  width.value < 400 ? (totalVisible.value = 4) : (totalVisible.value = 7);
-};
-onMounted(() => {
-  window.addEventListener("resize", setWidth);
+watch(width, (newValue) => {
+  newValue <= 640 ? (density.value = "compact") : (density.value = "default");
+  newValue <= 400 ? (totalVisible.value = 4) : (totalVisible.value = 7);
 });
 </script>
 <template>

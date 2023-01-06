@@ -33,7 +33,7 @@ import QuicklyMenu from "./components/menu/QuicklyMenu.vue";
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  @apply max-w-screen-2xl m-auto;
+  @apply max-w-screen-2xl m-auto overflow-hidden;
 }
 .content {
   @apply px-2 my-2;
