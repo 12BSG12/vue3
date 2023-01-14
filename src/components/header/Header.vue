@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import styles from "./header.module.scss";
-
-defineProps<{
-  msg: string;
-}>();
+import styles from './header.module.scss';
 </script>
 
 <template>
@@ -11,9 +7,7 @@ defineProps<{
     <div :class="styles.topBtn">
       <v-btn icon="mdi-eye" />
       <v-btn prepend-icon="mdi-arrange-send-backward">
-        <a href="https://pnipu.ru/index.php/ru/" target="_black"
-          >Предыдущая версия сайта</a
-        >
+        <a href="https://pnipu.ru/index.php/ru/" target="_black">Предыдущая версия сайта</a>
       </v-btn>
     </div>
     <div :class="styles.info">
