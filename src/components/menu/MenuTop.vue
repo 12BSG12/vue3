@@ -28,6 +28,7 @@ const { scrollY } = useScroll();
         <ul :class="styles.subMenu">
           <li>
             Сведения об образовательной организации
+            <v-icon icon="mdi-chevron-down"></v-icon>
             <ul class="top-12 lg:top-16" :class="styles.subMenuV2">
               <li>Основные сведения</li>
               <li>Структура и органы управления образовательной организацией</li>
@@ -46,6 +47,7 @@ const { scrollY } = useScroll();
           </li>
           <li>
             Общие сведения
+            <v-icon icon="mdi-chevron-down"></v-icon>
             <ul class="top-8" :class="styles.subMenuV2">
               <li>Миссия</li>
               <li>История</li>
@@ -56,6 +58,7 @@ const { scrollY } = useScroll();
           </li>
           <li>
             Факультет техники, технологии и управления
+            <v-icon icon="mdi-chevron-down"></v-icon>
             <ul class="top-12 lg:top-16" :class="styles.subMenuV2">
               <li>Кафедра 1</li>
               <li>Кафедра 2</li>
@@ -65,6 +68,7 @@ const { scrollY } = useScroll();
           </li>
           <li>
             Подразделения
+            <v-icon icon="mdi-chevron-down"></v-icon>
             <ul class="top-7" :class="styles.subMenuV2">
               <li>Библиотека</li>
             </ul>
