@@ -10,6 +10,7 @@
   md:top-0 md:relative md:right-0 md:grid md:grid-cols-3 gap-2 lg:grid-cols-6 z-40;
   li {
     list-style-type: none;
+    @apply h-full;
     &:hover {
       &:has(> ul) {
         @apply md:rounded-b-none;
@@ -36,8 +37,8 @@
       li {
         @apply px-2 mb-0 rounded-none first:rounded-t-lg last:rounded-b-lg font-normal normal-case hover:bg-slate-700 
         border-solid border-b border-black last:border-none;
-        i{
-          @apply 2xl:-rotate-90
+        i {
+          @apply 2xl:-rotate-90;
         }
         .subMenuV2 {
           @apply invisible opacity-0 absolute 2xl:top-0 w-full z-50 right-0 2xl:right-[-230px] h-64 2xl:h-max overflow-scroll 2xl:overflow-hidden;

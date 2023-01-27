@@ -1,15 +1,30 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import styles from './header.module.scss';
+
+const isActive = ref(false);
+const search = ref('');
 </script>
 
 <template>
   <header :class="styles.header">
-    <div :class="styles.topBtn">
-      <v-btn icon="mdi-eye" />
-      <v-btn prepend-icon="mdi-arrange-send-backward">
-        <a href="https://pnipu.ru/index.php/ru/" target="_black">Предыдущая версия сайта</a>
-      </v-btn>
+    <div :class="[styles.topBtn, { showMenu: isActive }]">
+      <div>
+        <v-btn class="mr-3" icon="mdi-eye" />
+        <v-btn prepend-icon="mdi-arrange-send-backward">
+          <a href="https://pnipu.ru/index.php/ru/" target="_black">Предыдущая версия сайта</a>
+        </v-btn>
+      </div>
+      <form>
+        <input v-model="search" placeholder="Введите текст для поиска..." />
+        <span @click="''" @keydown.enter="''">
+          <v-icon size="x-large" icon="mdi-search-web"></v-icon>
+        </span>
+      </form>
     </div>
+    <span :class="styles.menuDown" @click="isActive = !isActive">
+      <v-btn :class="{ rotate: isActive }" icon="mdi-menu-down" size="xl-small"></v-btn>
+    </span>
     <div :class="styles.info">
       <img src="@/assets/logo.svg" />
       <ul :class="styles.list">
@@ -35,3 +50,13 @@ import styles from './header.module.scss';
     </div>
   </header>
 </template>
+
+<style scoped lang="scss">
+.showMenu {
+  @apply relative top-0;
+}
+
+.rotate {
+  @apply -rotate-180;
+}
+</style>

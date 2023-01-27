@@ -1,6 +1,6 @@
 .cart {
   @apply relative w-full cursor-pointer rounded-lg shadow-md shadow-slate-900 transition 
-  ease-in-out duration-200 hover:scale-105;
+  ease-in-out duration-200 hover:scale-105 z-50;
   .info {
     @apply absolute flex items-center;
     .date {

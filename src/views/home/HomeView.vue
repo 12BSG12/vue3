@@ -1,51 +1,43 @@
 <script setup lang="ts">
-import styles from "./home.module.scss";
-import SlideItem from "./SlideItem.vue";
-import CartItem from "@/components/cart/CartItem.vue";
-import BannerItem from "@/components/banners/BannerItem.vue";
+import styles from './home.module.scss';
+import SlideItem from './SlideItem.vue';
+import CartItem from '@/components/cart/CartItem.vue';
+import BannerItem from '@/components/banners/BannerItem.vue';
 
-import { watch, reactive, ref } from "vue";
-import { useWindow } from "@/hooks/useWindow";
+import { watch, reactive, ref } from 'vue';
+import { useWindow } from '@/hooks/useWindow';
 const store = reactive({
   slides: [
     {
-      title: "lore;dld;l;dld;l;dld;l;dldddddddwwwwwwwwwwwwwwwwwwwwwwwwww",
-      src: "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
-      href: "/",
+      title: 'lore;dld;l;dld;l;dld;l;dldddddddwwwwwwwwwwwwwwwwwwwwwwwwww',
+      src: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
+      href: '/',
     },
     {
-      title: "123",
-      src: "https://cdn.vuetifyjs.com/images/cards/hotel.jpg",
-      href: "/",
+      title: '123',
+      src: 'https://cdn.vuetifyjs.com/images/cards/hotel.jpg',
+      href: '/',
     },
   ],
 });
 const { width } = useWindow();
-const density = ref<"default" | "comfortable" | "compact">("default");
+const density = ref<'default' | 'comfortable' | 'compact'>('default');
 const totalVisible = ref(7);
 const page = ref(1);
 
 watch(width, (newValue) => {
-  newValue <= 640 ? (density.value = "compact") : (density.value = "default");
+  newValue <= 640 ? (density.value = 'compact') : (density.value = 'default');
   newValue <= 400 ? (totalVisible.value = 4) : (totalVisible.value = 7);
 });
+
+const cartArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 </script>
 <template>
   <div :class="styles.home">
-    <v-carousel
-      :class="styles.carousel"
-      cycle
-      height="400"
-      show-arrows="hover"
-      hide-delimiters
-    >
+    <v-carousel :class="styles.carousel" cycle height="400" show-arrows="hover" hide-delimiters>
       <v-carousel-item v-for="slide in store.slides" :key="slide.title">
         <div :class="styles.carouselItem">
-          <SlideItem
-            :title="slide.title"
-            :img-src="slide.src"
-            :href="slide.href"
-          />
+          <SlideItem :title="slide.title" :img-src="slide.src" :href="slide.href" />
         </div>
       </v-carousel-item>
     </v-carousel>
@@ -55,46 +47,9 @@ watch(width, (newValue) => {
         <v-divider></v-divider>
         <div :class="styles.cart">
           <CartItem
-            description="123"
-            img="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
-            :info="{ date: 1, month: 'dec' }"
-          />
-          <CartItem
-            description="123"
-            img="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
-            :info="{ date: 1, month: 'dec' }"
-          />
-          <CartItem
-            description="123"
-            img="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
-            :info="{ date: 1, month: 'dec' }"
-          />
-          <CartItem
-            description="123"
-            img="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
-            :info="{ date: 1, month: 'dec' }"
-          />
-          <CartItem
-            description="123"
-            img="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
-            :info="{ date: 1, month: 'dec' }"
-          />
-          <CartItem
-            description="123"
-            img="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
-            :info="{ date: 1, month: 'dec' }"
-          />
-          <CartItem
-            description="123"
-            img="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
-            :info="{ date: 1, month: 'dec' }"
-          />
-          <CartItem
-            description="123"
-            img="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
-            :info="{ date: 1, month: 'dec' }"
-          />
-          <CartItem
+            v-for="id in cartArr"
+            :key="id"
+            :id="id"
             description="123"
             img="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
             :info="{ date: 1, month: 'dec' }"

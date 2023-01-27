@@ -19,9 +19,9 @@ const { scrollY } = useScroll();
       <v-btn icon="mdi-menu"></v-btn>
     </div>
     <ul :class="[styles.menu, { show: isActive }]">
-      <li>
-        <RouterLink to="/">Главная</RouterLink>
-      </li>
+      <RouterLink to="/">
+        <li>Главная</li>
+      </RouterLink>
       <li>
         Университет
         <v-icon icon="mdi-chevron-down"></v-icon>

@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import styles from "./cart.module.scss";
+import styles from './cart.module.scss';
 
 defineProps<{
+  id: number;
   description: string;
   img: string;
   info: {
@@ -12,12 +13,14 @@ defineProps<{
 </script>
 
 <template>
-  <div :class="styles.cart">
-    <div :class="styles.info">
-      <span :class="styles.date">{{ info.date }}</span>
-      <span :class="styles.month">{{ info.month }}</span>
+  <router-link :to="{ path: `post/${id}` }">
+    <div :class="styles.cart">
+      <div :class="styles.info">
+        <span :class="styles.date">{{ info.date }}</span>
+        <span :class="styles.month">{{ info.month }}</span>
+      </div>
+      <img :src="img" />
+      <div :class="styles.description">{{ description }}</div>
     </div>
-    <img :src="img" />
-    <div :class="styles.description">{{ description }}</div>
-  </div>
+  </router-link>
 </template>

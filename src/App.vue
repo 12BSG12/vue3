@@ -16,13 +16,13 @@ const toggleForm = () => cbf.value?.toggleForm();
 <template>
   <div class="bg">
     <div class="wrapper">
-      <div class="px-2">
+      <div class="px-3">
         <Header />
         <MenuTop />
         <BreadCrumbs />
         <QuicklyMenu />
       </div>
-      <div class="px-2 my-2">
+      <div class="px-3 my-2 ">
         <RouterView />
       </div>
       <BottomBtn :toggleForm="toggleForm" :isShow="cbf?.showForm" />
