@@ -3,24 +3,32 @@ import { ref } from 'vue';
 import styles from './header.module.scss';
 
 const isActive = ref(false);
+const onToggle = ref(false);
 const search = ref('');
 </script>
 
 <template>
   <header :class="styles.header">
     <div :class="[styles.topBtn, { showMenu: isActive }]">
-      <div>
-        <v-btn class="mr-3" icon="mdi-eye" />
+      <div :class="styles.leftBtn">
+        <v-btn icon="mdi-eye" />
         <v-btn prepend-icon="mdi-arrange-send-backward">
           <a href="https://pnipu.ru/index.php/ru/" target="_black">Предыдущая версия сайта</a>
         </v-btn>
       </div>
-      <form>
-        <input v-model="search" placeholder="Введите текст для поиска..." />
-        <span @click="''" @keydown.enter="''">
-          <v-icon size="x-large" icon="mdi-search-web"></v-icon>
-        </span>
-      </form>
+      <div :class="styles.rightBtn">
+        <div :class="styles.social">
+          <v-btn icon="mdi-account-group" size="x-small" variant="outlined" />
+          <v-btn icon="mdi-message-processing " size="x-small" variant="outlined" />
+          <v-btn icon="mdi-youtube" size="x-small" variant="outlined" />
+        </div>
+        <form :class="{ activeForm: onToggle }">
+          <input v-model="search" placeholder="Введите текст для поиска..." />
+          <span @click="onToggle = !onToggle">
+            <v-icon size="x-large" icon="mdi-search-web"></v-icon>
+          </span>
+        </form>
+      </div>
     </div>
     <span :class="styles.menuDown" @click="isActive = !isActive">
       <v-btn :class="{ rotate: isActive }" icon="mdi-menu-down" size="xl-small"></v-btn>
@@ -54,6 +62,16 @@ const search = ref('');
 <style scoped lang="scss">
 .showMenu {
   @apply relative top-0;
+}
+
+.activeForm {
+  @apply w-72;
+  span {
+    @apply px-2 bg-slate-700 rounded-l-none;
+  }
+  input {
+    @apply visible;
+  }
 }
 
 .rotate {
