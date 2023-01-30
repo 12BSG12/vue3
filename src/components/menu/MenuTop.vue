@@ -29,7 +29,7 @@ const { scrollY } = useScroll();
           <li>
             Сведения об образовательной организации
             <v-icon icon="mdi-chevron-down"></v-icon>
-            <ul class="top-12 lg:top-16" :class="styles.subMenuV2">
+            <ul class="top-[49px] lg:top-[65px]" :class="styles.subMenuV2">
               <li>Основные сведения</li>
               <li>Структура и органы управления образовательной организацией</li>
               <li>Документы</li>
@@ -48,7 +48,7 @@ const { scrollY } = useScroll();
           <li>
             Общие сведения
             <v-icon icon="mdi-chevron-down"></v-icon>
-            <ul class="top-8" :class="styles.subMenuV2">
+            <ul class="top-[41px]" :class="styles.subMenuV2">
               <li>Миссия</li>
               <li>История</li>
               <li>Как нас найти?</li>
@@ -59,7 +59,7 @@ const { scrollY } = useScroll();
           <li>
             Факультет техники, технологии и управления
             <v-icon icon="mdi-chevron-down"></v-icon>
-            <ul class="top-12 lg:top-16" :class="styles.subMenuV2">
+            <ul class="top-[49px] lg:top-[65px]" :class="styles.subMenuV2">
               <li>Кафедра 1</li>
               <li>Кафедра 2</li>
               <li>Кафедра 3</li>
@@ -69,7 +69,7 @@ const { scrollY } = useScroll();
           <li>
             Подразделения
             <v-icon icon="mdi-chevron-down"></v-icon>
-            <ul class="top-7" :class="styles.subMenuV2">
+            <ul class="top-10" :class="styles.subMenuV2">
               <li>Библиотека</li>
             </ul>
           </li>

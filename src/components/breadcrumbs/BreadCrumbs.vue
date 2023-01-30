@@ -7,17 +7,17 @@ const state = reactive({
     {
       title: "Dashboard",
       disabled: false,
-      href: "breadcrumbs_dashboard",
+      href: "#",
     },
     {
       title: "Link 1",
       disabled: false,
-      href: "breadcrumbs_link_1",
+      href: "#",
     },
     {
       title: "Link 2",
       disabled: true,
-      href: "breadcrumbs_link_2",
+      href: "#",
     },
   ],
 });

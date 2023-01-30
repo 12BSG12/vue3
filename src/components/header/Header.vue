@@ -34,7 +34,10 @@ const search = ref('');
       <v-btn :class="{ rotate: isActive }" icon="mdi-menu-down" size="xl-small"></v-btn>
     </span>
     <div :class="styles.info">
-      <img src="@/assets/logo.svg" />
+      <router-link to="/">
+        <img src="@/assets/logo.svg" />
+      </router-link>
+
       <ul :class="styles.list">
         <li>
           <v-icon icon="mdi-map-marker" size="small"></v-icon>

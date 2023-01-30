@@ -13,7 +13,7 @@ defineProps<{
       <h3>{{ title }}</h3>
       <v-divider></v-divider>
       <v-btn>
-        <a href="">Подробнее</a>
+        <a href="#">Подробнее</a>
       </v-btn>
     </div>
     <img :src="imgSrc" />
