@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -87,4 +89,20 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: inherit;
+}
+
+::-webkit-scrollbar {
+  @apply w-2 cursor-pointer;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray bg-opacity-30;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-black border-solid border-black rounded-full;
+}
+
+body {
+  @apply font-sans
 }

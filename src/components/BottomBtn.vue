@@ -17,12 +17,11 @@ defineProps({
 
 <template>
   <div class="btn">
-    <v-btn :icon="isShow ? 'mdi-window-close' : 'mdi-message'" @click="toggleForm" color="blue-grey"></v-btn>
+    <v-btn :icon="isShow ? 'mdi-window-close' : 'mdi-message-text'" @click="toggleForm"></v-btn>
     <Transition name="slide-fade">
       <v-btn
         v-if="scrollY >= 200"
         icon="mdi-arrow-up"
-        color="blue-grey"
         @click="scrollToTop"
       ></v-btn>
     </Transition>
@@ -33,7 +32,7 @@ defineProps({
 .btn {
   @apply fixed bottom-0 right-0 flex flex-col mr-2 mb-2 z-50;
   button {
-    @apply mb-2 last:mb-0 first:transition-all ease-out duration-300;
+    @apply mb-2 last:mb-0 first:transition-all ease-out duration-300 bg-gray;
   }
 }
 </style>

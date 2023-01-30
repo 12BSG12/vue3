@@ -50,7 +50,7 @@ const cartArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
             v-for="id in cartArr"
             :key="id"
             :id="id"
-            description="123"
+            description="123111231132132132132132131321321132123132132132"
             img="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
             :info="{ date: 1, month: 'dec' }"
           />
@@ -84,6 +84,8 @@ const cartArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         :total-visible="totalVisible"
         rounded="circle"
         :density="density"
+        variant="elevated"
+        active-color="black"
       ></v-pagination>
     </div>
   </div>

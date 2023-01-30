@@ -20,7 +20,9 @@ defineProps<{
         <span :class="styles.month">{{ info.month }}</span>
       </div>
       <img :src="img" />
-      <div :class="styles.description">{{ description }}</div>
+      <div :class="styles.description">
+        {{ description }}
+      </div>
     </div>
   </router-link>
 </template>

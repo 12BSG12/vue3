@@ -21,7 +21,7 @@
           @apply lg:first:rounded-t-none;
           &:hover {
             &:has(> ul) {
-              @apply last:rounded-b-none 2xl:last:rounded-b-lg;
+              @apply last:rounded-b-none lg:last:rounded-b-lg;
             }
             .subMenuV2 {
               @apply opacity-100 visible;
@@ -30,22 +30,25 @@
         }
       }
     }
-    @apply rounded-lg py-2 px-4 bg-slate-500
+    @apply rounded-lg py-2 px-4 bg-gray
     mb-1 lg:mb-0 uppercase font-bold flex relative
     items-center justify-between cursor-pointer transition-all duration-300 ease-in-out  
-    hover:bg-slate-600 lg:hover:bg-slate-400;
+    hover:bg-black hover:bg-opacity-95 lg:hover:bg-light-gray lg:bg-opacity-100;
     .subMenu {
       @apply invisible opacity-0 absolute left-0 top-11 lg:top-10 w-full transition-all ease-in-out duration-300 z-50;
       li {
-        @apply px-2 mb-0 rounded-none first:rounded-t-lg last:rounded-b-lg font-normal normal-case hover:bg-slate-700 
+        @apply px-2 mb-0 rounded-none first:rounded-t-lg last:rounded-b-lg font-normal normal-case hover:bg-light-gray 
         border-solid border-b border-black last:border-none;
         i {
           @apply 2xl:-rotate-90;
         }
         .subMenuV2 {
-          @apply invisible opacity-0 absolute 2xl:top-0 w-full z-50 right-0 2xl:right-[-230px] h-64 2xl:h-max overflow-y-scroll 2xl:overflow-hidden;
+          @apply invisible opacity-0 absolute lg:top-0 w-full z-50 right-0 lg:right-[-180px] 
+          min-[1230px]:right-[-190px] min-[1300px]:right-[-200px] 
+          min-[1350px]:right-[-210px] min-[1400px]:right-[-225px] 
+          2xl:right-[-230px] h-64 lg:h-max overflow-y-scroll 2xl:overflow-hidden;
           li {
-            @apply rounded-none 2xl:first:rounded-t-lg last:rounded-b-lg hover:last:rounded-b-lg h-max;
+            @apply rounded-none lg:first:rounded-t-lg last:rounded-b-lg hover:last:rounded-b-lg h-max;
           }
         }
       }

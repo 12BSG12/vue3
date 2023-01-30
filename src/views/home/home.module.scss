@@ -2,20 +2,20 @@
   @apply my-2;
 }
 .carousel {
-  @apply hidden lg:block rounded-lg shadow-md shadow-slate-900;
+  @apply hidden lg:block rounded-lg shadow-md shadow-black;
   .carouselItem {
-    @apply h-full bg-slate-400;
+    @apply h-full bg-light-gray;
   }
 }
 .slide {
   @apply flex justify-between items-center h-full;
   .slideLeft {
-    @apply p-5 bg-slate-300 rounded-lg max-w-xs mx-28;
+    @apply p-5 bg-white rounded-lg max-w-xs mx-28;
     h3 {
       @apply mb-3 uppercase text-base break-words;
     }
     button {
-      @apply mt-3;
+      @apply mt-3 bg-gray;
     }
   }
   img {
@@ -38,11 +38,12 @@
     .bannerTitle {
       @apply relative;
       p {
-        @apply absolute top-0 z-10 w-full bg-slate-500 pl-3 py-3 rounded-t-lg uppercase;
+        @apply absolute top-0 z-10 w-full bg-gray pl-3 py-3 rounded-t-lg uppercase;
       }
     }
   }
 }
 .pagination {
   @apply text-center my-3 sm:mt-0;
+
 }

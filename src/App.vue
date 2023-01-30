@@ -22,7 +22,7 @@ const toggleForm = () => cbf.value?.toggleForm();
         <BreadCrumbs />
         <QuicklyMenu />
       </div>
-      <div class="px-3 my-2 ">
+      <div class="px-3 my-2">
         <RouterView />
       </div>
       <BottomBtn :toggleForm="toggleForm" :isShow="cbf?.showForm" />
@@ -34,8 +34,9 @@ const toggleForm = () => cbf.value?.toggleForm();
 
 <style lang="scss">
 .bg {
-  @apply relative before:absolute bg-slate-200 left-0 right-0 bottom-0 top-0;
+  @apply relative before:absolute bg-gray bg-opacity-30 left-0 right-0 bottom-0 top-0;
 }
+
 .wrapper {
   min-height: 100vh;
   display: grid;
