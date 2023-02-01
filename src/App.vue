@@ -11,6 +11,7 @@ import QuicklyMenu from './components/menu/QuicklyMenu.vue';
 
 const cbf = ref<InstanceType<typeof CallbackForm> | null>(null);
 const toggleForm = () => cbf.value?.toggleForm();
+
 </script>
 
 <template>
@@ -34,7 +35,7 @@ const toggleForm = () => cbf.value?.toggleForm();
 
 <style lang="scss">
 .bg {
-  @apply relative before:absolute bg-gray bg-opacity-30 left-0 right-0 bottom-0 top-0;
+  @apply relative before:absolute bg-gray bg-opacity-10 left-0 right-0 bottom-0 top-0;
 }
 
 .wrapper {

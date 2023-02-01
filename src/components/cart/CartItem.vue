@@ -3,7 +3,7 @@ import styles from './cart.module.scss';
 
 defineProps<{
   id: number;
-  description: string;
+  title: string;
   img: string;
   info: {
     date: number;
@@ -13,16 +13,20 @@ defineProps<{
 </script>
 
 <template>
-  <router-link :to="{ path: `post/${id}` }">
-    <div :class="styles.cart">
+  <div :class="styles.cart">
+    <router-link :to="{ path: `post/${id}` }">
       <div :class="styles.info">
         <span :class="styles.date">{{ info.date }}</span>
         <span :class="styles.month">{{ info.month }}</span>
       </div>
-      <img :src="img" />
-      <div :class="styles.description">
-        {{ description }}
+      <div :class="styles.wrapper">
+        <div :class="[styles.cardImg, styles.ibg]">
+          <img :src="img" />
+        </div>
+        <div :class="styles.title">
+          {{ title }}
+        </div>
       </div>
-    </div>
-  </router-link>
+    </router-link>
+  </div>
 </template>

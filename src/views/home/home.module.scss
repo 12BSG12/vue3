@@ -25,16 +25,16 @@
 .content {
   @apply flex justify-between;
   .news {
-    @apply my-2 sm:my-10 xl:max-w-6xl;
+    @apply my-2 sm:mt-10 xl:max-w-6xl;
     h2 {
       @apply text-2xl uppercase mb-2;
     }
     .cart {
-      @apply grid grid-cols-2 gap-2 mt-4 md:grid-cols-3 md:gap-4;
+      @apply grid grid-cols-2 gap-2 mt-4 sm:grid-cols-3 md:grid-cols-4 md:gap-4;
     }
   }
   .banners {
-    @apply hidden xl:grid grid-cols-1 gap-3 mt-12 w-1/4 h-1/3 ml-5;
+    @apply hidden lg:grid grid-cols-1 gap-3 mt-12 w-1/4 h-1/3 ml-5;
     .bannerTitle {
       @apply relative;
       p {
@@ -44,6 +44,5 @@
   }
 }
 .pagination {
-  @apply text-center my-3 sm:mt-0;
-
+  @apply text-center mt-5 xl:mt-6;
 }
