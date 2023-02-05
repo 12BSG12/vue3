@@ -1,14 +1,6 @@
-@use 'sass:math';
-//Перевод из px в
-//to %
-@function prc($pxOne, $pxTwo) {
-  @return math.div($pxOne, $pxTwo) * 100%;
-}
-
 .cart {
-  @apply relative w-full cursor-pointer rounded-lg shadow-md shadow-black transition 
-  ease-in-out duration-200 hover:scale-105 bg-gray;
-
+  @apply relative md:max-h-[270px] cursor-pointer rounded-lg shadow-md shadow-black transition 
+  ease-in-out duration-200 hover:scale-105;
   .info {
     @apply absolute flex items-center z-10;
     .date {
@@ -18,27 +10,10 @@
       @apply py-1 px-2 bg-gray rounded-br-lg;
     }
   }
-
-  .cardImg {
-    padding-bottom: prc(305px, 350px);
+  img{
+    @apply rounded-lg object-cover w-full h-full;
   }
   .title {
-    @apply px-3 py-2 rounded-b-lg break-words ;
-  }
-}
-
-.ibg {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    @apply rounded-t-lg;
+    @apply absolute bottom-0 right-0 left-0 px-3 py-2 rounded-b-lg break-words bg-light-gray bg-opacity-80;
   }
 }

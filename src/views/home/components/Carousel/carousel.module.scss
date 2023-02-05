@@ -1,0 +1,26 @@
+.carousel {
+  @apply hidden lg:block rounded-lg shadow-md shadow-black;
+  .carouselItem {
+    @apply h-full bg-light-gray;
+  }
+}
+
+.loader {
+  @apply hidden lg:block h-[400px]
+}
+
+.slide {
+  @apply flex justify-between items-center h-full;
+  .slideLeft {
+    @apply p-5 bg-white rounded-lg max-w-xs mx-28;
+    h3 {
+      @apply mb-3 uppercase text-base break-words;
+    }
+    button {
+      @apply mt-3 bg-gray;
+    }
+  }
+  img {
+    @apply max-w-max h-full lg:w-6/12 lg:max-w-none object-cover;
+  }
+}

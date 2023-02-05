@@ -12,6 +12,7 @@
     list-style-type: none;
     @apply h-full;
     &:hover {
+      
       &:has(> ul) {
         @apply lg:rounded-b-none;
       }
@@ -46,7 +47,7 @@
           @apply invisible opacity-0 absolute lg:top-0 w-full z-50 right-0 lg:right-[-180px] 
           min-[1230px]:right-[-190px] min-[1300px]:right-[-200px] 
           min-[1350px]:right-[-210px] min-[1400px]:right-[-225px] 
-          2xl:right-[-230px] h-64 lg:h-max overflow-y-scroll 2xl:overflow-hidden;
+          2xl:right-[-230px] h-64 lg:h-max overflow-y-scroll lg:overflow-hidden;
           li {
             @apply rounded-none lg:first:rounded-t-lg last:rounded-b-lg hover:last:rounded-b-lg h-max;
           }

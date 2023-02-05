@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import styles from "./home.module.scss";
-
 defineProps<{
   title: string;
   imgSrc: string;
@@ -12,10 +10,10 @@ defineProps<{
     <div :class="styles.slideLeft">
       <h3>{{ title }}</h3>
       <v-divider></v-divider>
-      <v-btn>
-        <a href="#">Подробнее</a>
-      </v-btn>
+      <router-link :to="href"><v-btn>Подробнее</v-btn></router-link>
     </div>
     <img :src="imgSrc" />
   </div>
 </template>
+
+<style lang="scss" module="styles" scoped src="./carousel.module.scss"></style>

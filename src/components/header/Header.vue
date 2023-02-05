@@ -11,7 +11,7 @@ const search = ref('');
   <header :class="styles.header">
     <div :class="[styles.topBtn, { showMenu: isActive }]">
       <div :class="styles.leftBtn">
-        <v-btn icon="mdi-eye"/>
+        <v-btn id="specialButton" icon="mdi-eye"/>
         <v-btn prepend-icon="mdi-arrange-send-backward" >
           <a href="https://pnipu.ru/index.php/ru/" target="_black">Предыдущая версия сайта</a>
         </v-btn>

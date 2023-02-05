@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import styles from "./banner.module.scss";
 defineProps<{
-  height: string | number;
-  href: string;
-  imgSrc: string;
+  imgsAndUrl: {
+    img: string;
+    link: string;
+  }[];
 }>();
 </script>
 
@@ -11,12 +11,14 @@ defineProps<{
   <v-carousel
     :class="styles.banner"
     cycle
-    :height="height"
+    :height="300"
     :show-arrows="false"
     hide-delimiter-background
   >
-    <a :href="href" v-for="(item, i) in 5" :key="i">
-      <v-carousel-item :src="imgSrc" cover> </v-carousel-item>
-    </a>
+    <v-carousel-item :src="item.img" v-for="item in imgsAndUrl" :key="item.img" cover>
+      <a :href="item.link" target="_blank" />
+    </v-carousel-item>
   </v-carousel>
 </template>
+
+<style lang="scss" module="styles" scoped src="./banner.module.scss"></style>

@@ -1,15 +1,15 @@
-import axios from 'axios';
+import axios, { type AxiosResponse } from 'axios';
 
-import type { IPosts } from './types';
+export const baseURL = 'http://localhost:1337';
 
-const instance = axios.create({
-  baseURL: 'https://strapi4f.onrender.com/api/',
-  headers: {
-    'Content-Type': 'multipart/form-data',
-  },
+const API_URL = `${baseURL}/api/`;
+
+export const instance = axios.create({
+  baseURL: API_URL,
+  withCredentials: true
 });
 
-export const getPosts = async () => {
-  const { data } = await instance.get<IPosts>('posts?populate=*');
+export async function extractData<T>(promise: Promise<AxiosResponse<T>>) {
+  const { data } = await promise;
   return data;
-};
+}

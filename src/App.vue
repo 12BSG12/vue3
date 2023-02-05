@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { RouterView } from 'vue-router';
+
+import MyAlert from '@/components/Alert/MyAlert.vue';
 import BottomBtn from './components/BottomBtn.vue';
 import BreadCrumbs from './components/breadcrumbs/BreadCrumbs.vue';
 import CallbackForm from './components/callbackForm/CallbackForm.vue';
@@ -11,7 +13,6 @@ import QuicklyMenu from './components/menu/QuicklyMenu.vue';
 
 const cbf = ref<InstanceType<typeof CallbackForm> | null>(null);
 const toggleForm = () => cbf.value?.toggleForm();
-
 </script>
 
 <template>
@@ -28,6 +29,7 @@ const toggleForm = () => cbf.value?.toggleForm();
       </div>
       <BottomBtn :toggleForm="toggleForm" :isShow="cbf?.showForm" />
       <CallbackForm ref="cbf" />
+      <MyAlert />
       <Footer />
     </div>
   </div>

@@ -10,9 +10,14 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/post/:post_id',
+      path: '/post/:id',
       name: 'post',
       component: () => import('../views/post/PostView.vue'),
+    },
+    {
+      path: '/:path(.*)*',
+      name: '404',
+      component: () => import('@/components/404/NotFound.vue'),
     },
   ],
 });

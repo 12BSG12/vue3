@@ -116,7 +116,7 @@ const { scrollY } = useScroll();
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .show {
   @apply right-0;
 }

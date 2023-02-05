@@ -1,36 +1,32 @@
 <script setup lang="ts">
-import { reactive } from "vue";
-import styles from "./breadCrumbs.module.scss";
+import { reactive } from 'vue';
+import styles from './breadCrumbs.module.scss';
 
 const state = reactive({
   items: [
     {
-      title: "Dashboard",
+      title: 'Dashboard',
       disabled: false,
-      href: "#",
+      href: '#',
     },
     {
-      title: "Link 1",
+      title: 'Link 1',
       disabled: false,
-      href: "#",
+      href: '#',
     },
     {
-      title: "Link 2",
+      title: 'Link 2',
       disabled: true,
-      href: "#",
+      href: '#',
     },
   ],
 });
 </script>
 
 <template>
-  <div>
-    <ul :class="styles.list">
-      <li v-for="item in state.items" :key="item.title" disabled>
-        <a :href="item.href" :class="item.disabled && styles.disabled">{{
-          item.title
-        }}</a>
-      </li>
-    </ul>
-  </div>
+  <ul :class="styles.list">
+    <li v-for="item in state.items" :key="item.title" disabled>
+      <a :href="item.href" :class="item.disabled && styles.disabled">{{ item.title }}</a>
+    </li>
+  </ul>
 </template>

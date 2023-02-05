@@ -1,0 +1,6 @@
+.banners {
+  @apply relative hidden lg:grid grid-cols-1 gap-3 mt-12 w-1/4 h-1/3 ml-5;
+  &:before {
+    @apply content-['ИНФОБЛОК'] absolute top-0 z-10 w-full bg-gray pl-3 py-3 rounded-t-lg uppercase
+  }
+}
