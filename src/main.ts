@@ -5,7 +5,7 @@ import { VueQueryPlugin } from "vue-query";
 import App from "./App.vue";
 import router from "./router";
 
-import "./assets/main.scss";
+import "./main.scss";
 import vuetify from "./plugins/vuetify";
 
 const app = createApp(App);

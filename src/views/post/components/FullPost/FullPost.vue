@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useOnClickOutside } from '@/hooks/useOnClickOutside';
 import { useViewsStore } from '@/stores';
 import { ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
@@ -9,6 +10,17 @@ const route = useRoute();
 const router = useRouter();
 
 const id = ref<number>(+route.params.id);
+
+const container = ref<HTMLElement | null>(null);
+
+useOnClickOutside(container, () => {
+  document.body.classList.remove('hideScroll');
+});
+
+const onClick = () => {
+  document.body.classList.toggle('hideScroll');
+};
+
 const { data } = usePost(id);
 const { minID } = useViewsStore();
 
@@ -21,28 +33,49 @@ watch(
 </script>
 
 <template>
-  <div class="mt-5">
-    <v-btn color="primary" @click="router.go(-1)" class="mr-2"> Назад </v-btn>
-    <v-btn
-      color="primary"
-      @click="router.push({ path: `/post/${id - 1}` })"
-      :disabled="id === minID"
-    >
-      Следующий
-    </v-btn>
-    <h1 class="mt-2 font-semibold">{{ data?.post.title }}</h1>
-    <div class="mt-2 font-semibold">{{ data?.post.createdAt }}</div>
-    <div class="mt-2 font-semibold flex gap-1">
-      <div v-for="tag in data?.post.tags" :key="tag">{{ tag }}</div>
-    </div>
-    <div class="mt-2 font-semibold">{{ data?.post.subtitle }}</div>
-    <div v-html="data?.post.content"></div>
-    <div class="mt-2 font-semibold grid grid-cols-3 gap-5">
-      <div class="h-80" v-for="img in data?.post.contentimgs" :key="img">
-        <img class="w-full h-full object-cover" :src="img" />
+  <div :class="styles.post">
+    <div :class="styles.inner">
+      <div :class="styles.title">
+        <h1>{{ data?.post.title }}</h1>
+        <v-btn prepend-icon="mdi-arrow-u-left-top" size="small" @click="router.go(-1)">
+          Назад
+        </v-btn>
+      </div>
+      <v-divider></v-divider>
+      <div :class="styles.info">
+        <p>
+          <v-icon icon="mdi-calendar-month-outline"></v-icon>
+          Опубликовано: {{ data?.post.createdAt }}
+        </p>
+        <div :class="styles.tags">
+          <router-link to="/" v-for="tag in data?.post.tags" :key="tag">{{ tag }}</router-link>
+        </div>
+      </div>
+      <div :class="styles.subtitle">{{ data?.post.subtitle }}</div>
+      <div v-html="data?.post.content"></div>
+      <div :class="styles.imgs" ref="container">
+        <a
+          v-for="img in data?.post.contentimgs"
+          :key="img.src"
+          data-fancybox="gallery"
+          :href="img.src"
+          @click="onClick"
+        >
+          <v-img class="rounded-lg" :aspect-ratio="1" :src="img.src" cover></v-img>
+        </a>
+      </div>
+      <div :class="styles.nextBtn">
+        <v-btn
+          size="small"
+          @click="router.push({ path: `/news/post/${id - 1}` })"
+          :disabled="id === minID"
+        >
+          Следующий
+          <v-icon end icon="mdi-chevron-right" size="large"></v-icon>
+        </v-btn>
       </div>
     </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped lang="scss" module="styles" src="./fullPost.module.scss"></style>

@@ -103,6 +103,10 @@ h6 {
   @apply lg:bg-black lg:border-solid lg:border-black lg:rounded-full;
 }
 
+.hideScroll::-webkit-scrollbar {
+  @apply w-0;
+}
+
 body {
   @apply font-sans;
 }

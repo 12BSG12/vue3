@@ -107,8 +107,12 @@ const { scrollY } = useScroll();
         Пресс-центр
         <v-icon icon="mdi-chevron-down"></v-icon>
         <ul :class="styles.subMenu">
-          <li>Видеогалерея</li>
-          <li>Фотогалерея</li>
+          <li>
+            <a href="https://vk.com/chf_pnipu" target="_blank"> Видеогалерея </a>
+          </li>
+          <li>
+            <a href="https://vk.com/chf_pnipu" target="_blank"> Фотогалерея </a>
+          </li>
           <li>Новости</li>
         </ul>
       </li>

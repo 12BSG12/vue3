@@ -12,7 +12,7 @@ defineProps<{
 
 <template>
   <div :class="styles.cart">
-    <router-link :to="{ path: `post/${id}` }">
+    <router-link :to="{ path: `news/post/${id}` }">
       <div :class="styles.info">
         <span :class="styles.date">{{ info.date }}</span>
         <span :class="styles.month">{{ info.month }}</span>
