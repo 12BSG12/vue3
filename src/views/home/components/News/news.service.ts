@@ -34,7 +34,7 @@ function selectPosts(data: IPosts) {
     return {
       id: post.id,
       title: post.attributes.title,
-      img: baseURL + post.attributes.img.data.attributes.url,
+      img: post.attributes.img.data.attributes.url,
       info: {
         date: dataTime[0],
         month: dataTime[1].slice(0, 3),

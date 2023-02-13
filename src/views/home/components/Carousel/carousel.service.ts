@@ -13,7 +13,7 @@ function selectSlides(data: ISlides) {
     return {
       id: slide.id,
       title: slide.attributes.title,
-      img: baseURL + slide.attributes.img.data.attributes.url,
+      img: slide.attributes.img.data.attributes.url,
       link: slide.attributes.link
     };
   });
