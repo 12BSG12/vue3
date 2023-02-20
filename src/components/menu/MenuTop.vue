@@ -113,7 +113,9 @@ const { scrollY } = useScroll();
           <li>
             <a href="https://vk.com/chf_pnipu" target="_blank"> Фотогалерея </a>
           </li>
-          <li>Новости</li>
+          <RouterLink to="/press-tsentr/novosti">
+            <li>Новости</li>
+          </RouterLink>
         </ul>
       </li>
     </ul>

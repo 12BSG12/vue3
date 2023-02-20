@@ -2,7 +2,7 @@ import { baseURL, extractData, instance } from '@/api';
 import type { APIError } from '@/api/types';
 import type { IPost } from '@/views/home/home.type';
 import type { Ref } from 'vue';
-import { useQuery } from 'vue-query';
+import { useQuery } from "@tanstack/vue-query";
 import type { INewPost } from './fullPost.type';
 
 async function findOne(id: number) {
@@ -31,7 +31,7 @@ function selectPost(data: IPost) {
 }
 
 export const usePost = (id: Ref<number>) => {
-  const { isLoading, isFetching, isError, data } = useQuery<IPost, APIError, INewPost>(
+  const { isLoading, isFetching, isSuccess, isError, data } = useQuery<IPost, APIError, INewPost>(
     ['post', id],
     () => findOne(id.value),
     {
@@ -42,6 +42,7 @@ export const usePost = (id: Ref<number>) => {
     data,
     isFetching,
     isLoading,
+    isSuccess,
     isError,
   };
 };

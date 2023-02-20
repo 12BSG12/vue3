@@ -3,15 +3,19 @@ import BannerItem from '@/components/banners/BannerItem.vue';
 import CustomLoader from '@/components/CustomLoader.vue';
 import { useBanners } from './banners.service';
 
-const { data, isLoading } = useBanners();
+const { data, isLoading, isSuccess } = useBanners();
 </script>
 
 <template>
   <div :class="styles.banners">
-    <template v-if="isLoading">
-      <CustomLoader class="h-[300px]" v-for="i in 3" :key="i" />
+    <CustomLoader v-if="isLoading" class="h-[300px]" />
+    <template v-if="isSuccess">
+      <BannerItem
+        v-for="banner in data?.banners"
+        :key="banner.id"
+        :imgsAndUrl="banner.imgsAndUrl"
+      />
     </template>
-    <BannerItem v-else v-for="banner in data?.banners" :key="banner.id" :imgsAndUrl="banner.imgsAndUrl" />
   </div>
 </template>
 

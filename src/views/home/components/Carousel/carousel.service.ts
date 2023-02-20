@@ -1,7 +1,7 @@
 import { extractData, instance, baseURL } from "@/api";
 import type { APIError } from "@/api/types";
 import { useViewsStore } from "@/stores";
-import { useQuery } from "vue-query";
+import { useQuery } from "@tanstack/vue-query";
 import type { ISlides, INewSlides } from "./carousel.type";
 
 async function findAll() {
@@ -25,8 +25,8 @@ function selectSlides(data: ISlides) {
 export function useSlides() {
   const { setAlerts } = useViewsStore();
 
-  const { isLoading, isFetching, error, data } = useQuery<ISlides, APIError, INewSlides>(
-    'slides',
+  const { isLoading, isFetching, isSuccess, error, data } = useQuery<ISlides, APIError, INewSlides>(
+    ['slides'],
     findAll,
     {
       select: (data) => selectSlides(data),
@@ -41,6 +41,7 @@ export function useSlides() {
     data,
     isFetching,
     isLoading,
+    isSuccess,
     error,
   };
 }

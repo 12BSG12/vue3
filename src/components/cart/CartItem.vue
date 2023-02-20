@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
+
 defineProps<{
   id: number;
   title: string;
@@ -8,11 +10,16 @@ defineProps<{
     month: string;
   };
 }>();
+
+const router = useRouter();
 </script>
 
 <template>
   <div :class="styles.cart">
-    <router-link :to="{ path: `news/post/${id}` }">
+    <router-link
+      :to="{ path: `press-tsentr/novosti/${title}` }"
+      @click="router.push({ path: `press-tsentr/novosti/${title}`, query: { id } })"
+    >
       <div :class="styles.info">
         <span :class="styles.date">{{ info.date }}</span>
         <span :class="styles.month">{{ info.month }}</span>

@@ -27,7 +27,7 @@ watch(width, (newValue) => {
       <v-divider></v-divider>
       <div :class="styles.cart">
         <template v-if="isLoading">
-          <CustomLoader class="h-[270px]" v-for="i in 9" :key="i" />
+          <CustomLoader class="h-[270px]" v-for="i in 3" :key="i" />
         </template>
         <template v-if="isSuccess">
           <CartItem

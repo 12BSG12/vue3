@@ -1,7 +1,7 @@
 import { extractData, instance } from "@/api";
 import type { APIError } from "@/api/types";
 import { useViewsStore } from "@/stores";
-import { useQuery } from "vue-query";
+import { useQuery } from "@tanstack/vue-query";
 import type { IBanners, INewBanners } from "./banners.type";
 
 async function findAll() {
@@ -23,8 +23,8 @@ function selectBanners(data: IBanners) {
 export function useBanners() {
   const { setAlerts } = useViewsStore();
 
-  const { isLoading, isFetching, error, data } = useQuery<IBanners, APIError, INewBanners>(
-    'banners',
+  const { isLoading, isFetching, isSuccess, error, data } = useQuery<IBanners, APIError, INewBanners>(
+    ['banners'],
     findAll,
     {
       select: (data) => selectBanners(data),
@@ -39,6 +39,7 @@ export function useBanners() {
     data,
     isFetching,
     isLoading,
+    isSuccess,
     error,
   };
 }

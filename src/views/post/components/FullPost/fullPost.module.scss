@@ -5,7 +5,7 @@
     .title {
       @apply flex justify-between items-center mb-4;
       h1{
-        @apply uppercase text-xl font-bold
+        @apply uppercase text-xl font-bold w-56 break-words sm:w-0 sm:break-normal
       }
       button {
         @apply bg-gray;

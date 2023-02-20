@@ -3,13 +3,13 @@ import CustomLoader from '@/components/CustomLoader.vue';
 import { useSlides } from './carousel.service';
 import CarouselItem from './CarouselItem.vue';
 
-const { data, isLoading } = useSlides();
+const { data, isLoading, isSuccess } = useSlides();
 </script>
 
 <template>
   <CustomLoader :class="styles.loader" v-if="isLoading" />
   <v-carousel
-    v-else
+    v-if="isSuccess"
     :class="styles.carousel"
     cycle
     height="400"

@@ -3,7 +3,7 @@ import type { APIError } from '@/api/types';
 import { useViewsStore } from '@/stores';
 import qs from 'qs';
 import type { Ref } from 'vue';
-import { useQuery } from 'vue-query';
+import { useQuery } from "@tanstack/vue-query";
 import type { IPosts } from '../../home.type';
 import type { INewResponse } from './news.type';
 
@@ -48,13 +48,13 @@ function selectPosts(data: IPosts) {
 }
 
 export function usePosts(page: Ref<number>) {
-  const { setMinId, setAlerts } = useViewsStore();
+  const { setMinAndMaxId, setAlerts } = useViewsStore();
   const { isLoading, isFetching, isSuccess, error, data } = useQuery<IPosts, APIError, INewResponse>(
     ['posts', page],
     () => findAll(page.value),
     {
       select: (data) => selectPosts(data),
-      onSuccess: (data) => setMinId(Math.min(...data.posts.map((post) => post.id))),
+      onSuccess: (data) => setMinAndMaxId(data.posts.map((post) => post.id)),
       onError: () => setAlerts({
         title: 'Ошибка на стороне сервера',
         text: 'Попробуйте перезагрузить страницу, чтобы подгрузить посты...'

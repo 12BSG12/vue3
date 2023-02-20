@@ -3,7 +3,7 @@
 }
 
 .burger {
-  @apply lg:hidden float-right -ml-2;
+  @apply lg:hidden absolute right-2;
 }
 .menu {
   @apply absolute top-16 -right-full transition-all ease-in-out duration-200 mb-5
