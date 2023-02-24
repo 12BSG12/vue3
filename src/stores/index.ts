@@ -1,5 +1,6 @@
-import { ref } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import { defineStore } from 'pinia';
+import { useRoute, useRouter } from 'vue-router';
 
 interface IBody {
   title: string;
@@ -21,5 +22,11 @@ export const useViewsStore = defineStore('views', () => {
   const setAlerts = (body: IBody) => {
     alertsData.value.push(body);
   };
-  return { minID, maxID, setMinAndMaxId, setAlerts, alertsData };
+  return {
+    minID,
+    maxID,
+    setMinAndMaxId,
+    setAlerts,
+    alertsData,
+  };
 });

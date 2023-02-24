@@ -128,7 +128,7 @@ const { scrollY } = useScroll();
 }
 .fixedMenu {
   @apply fixed top-2 right-2 left-0 sm:animate-show md:right-0
-  max-w-screen-2xl m-auto;
+  max-w-screen-2xl m-auto z-50;
 }
 @keyframes show {
   from {

@@ -12,7 +12,6 @@
     list-style-type: none;
     @apply h-full;
     &:hover {
-      
       &:has(> ul) {
         @apply lg:rounded-b-none;
       }
@@ -36,7 +35,7 @@
     items-center justify-between cursor-pointer transition-all duration-300 ease-in-out  
     hover:bg-black hover:bg-opacity-95 lg:hover:bg-light-gray lg:bg-opacity-100;
     .subMenu {
-      @apply invisible opacity-0 absolute left-0 top-11 lg:top-10 w-full transition-all ease-in-out duration-300 z-50;
+      @apply invisible opacity-0 absolute left-0 top-11 lg:top-10 w-full transition-all ease-in-out duration-200;
       li {
         @apply px-2 mb-0 rounded-none first:rounded-t-lg last:rounded-b-lg font-normal normal-case hover:bg-light-gray 
         border-solid border-b border-black last:border-none;

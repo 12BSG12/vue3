@@ -1,11 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/home/HomeView.vue';
 
-const news = {
-  template: '<div>news</div>',
-}
-
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -17,7 +12,7 @@ const router = createRouter({
     {
       path: '/press-tsentr/novosti',
       name: 'novosti',
-      component: () =>  news
+      component: () =>  import('../views/News/NewsView.vue')
     },
     {
       path: '/press-tsentr/novosti/:title',
