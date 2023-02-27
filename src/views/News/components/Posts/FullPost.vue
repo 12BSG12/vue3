@@ -7,13 +7,10 @@ import PostSubtitle from '@/components/fullPost/PostSubtitle.vue';
 import PostHtmlContent from '@/components/fullPost/PostHtmlContent.vue';
 import { useLoadMorePosts } from './FullPost.service';
 
-import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import CustomSpinner from '@/components/CustomSpinner.vue';
 
-const observerRef = ref<Element | null>(null);
-
-const { postData, isLoading } = useLoadMorePosts(observerRef);
+const { postData, isLoading, loadMorePost } = useLoadMorePosts();
 
 const router = useRouter();
 </script>
@@ -44,7 +41,7 @@ const router = useRouter();
       </div>
     </div>
   </PostContainer>
-  <div ref="observerRef"></div>
+  <div v-intersection="loadMorePost"></div>
 </template>
 
 <style scoped lang="scss">

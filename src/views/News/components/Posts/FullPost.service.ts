@@ -1,10 +1,8 @@
 import { useViewsStore } from '@/stores';
 import { extractData, instance } from '@/api';
-import type { APIError } from '@/api/types';
 import type { IPosts } from '@/views/home/home.type';
 import { type Ref, ref, onMounted } from 'vue';
-import { useQuery } from '@tanstack/vue-query';
-import type { INewPost, IPostData } from './fullPost.type';
+import type { IPostData } from './fullPost.type';
 import qs from 'qs';
 
 function findAll(page: number = 1) {
@@ -52,7 +50,7 @@ function selectPosts(data: IPosts) {
   };
 }
 
-export function useLoadMorePosts(observeRef: Ref<Element | null>) {
+export function useLoadMorePosts() {
   const page = ref(1);
   const isLoading = ref(false);
   const pageCount = ref(0);
@@ -60,33 +58,8 @@ export function useLoadMorePosts(observeRef: Ref<Element | null>) {
 
   const { setMinAndMaxId, setAlerts } = useViewsStore();
 
-  // const { isLoading, isFetching, isSuccess, error } = useQuery<IPosts, APIError, INewPost>(
-  //   ['LoadMorePosts'],
-  //   () => findAll(),
-  //   {
-  //     select: (data) => selectPosts(data),
-  //     onSuccess: (data) => {
-  //       setMinAndMaxId(data.posts.map((post) => post.id));
-  //       postData.value = [...postData.value, ...data.posts].reduce((prevValue, currentValue) => {
-  //         if (!prevValue.find((item) => item.id === currentValue.id)) {
-  //           prevValue.push(currentValue);
-  //         }
-  //         return prevValue;
-  //       }, [] as typeof postData.value);
-  //       loadMorePost(data.meta.pagination.pageCount);
-  //     },
-  //     onError: () => {
-  //       setAlerts({
-  //         title: 'Ошибка на стороне сервера',
-  //         text: 'Попробуйте перезагрузить страницу, чтобы подгрузить посты...',
-  //       });
-  //     },
-  //   },
-  // );
-
   onMounted(() => {
     loadPost();
-    loadMorePost();
   });
 
   const loadPost = async () => {
@@ -109,36 +82,27 @@ export function useLoadMorePosts(observeRef: Ref<Element | null>) {
     }
   };
 
-  const loadMorePost = () => {
-    if (!observeRef.value) return;
-    const options = {
-      rootMargin: '0px',
-      threshold: 0.1,
-    };
-
-    const callback = async ([entries]: IntersectionObserverEntry[]) => {
-      if (entries.isIntersecting && page.value < pageCount.value) {
+  const loadMorePost = async () => {
+    if (page.value < pageCount.value) {
+      try {
         page.value += 1;
-        try {
-          isLoading.value = true;
-          const response = await findAll(page.value);
-          const newPosts = selectPosts(response).posts;
-          postData.value = [...postData.value, ...newPosts];
-        } catch (error) {
-          setAlerts({
-            title: 'Ошибка на стороне сервера',
-            text: 'Попробуйте перезагрузить страницу, чтобы подгрузить посты...',
-          });
-        } finally {
-          isLoading.value = false;
-        }
+        isLoading.value = true;
+        const response = await findAll(page.value);
+        const newPosts = selectPosts(response).posts;
+        postData.value = [...postData.value, ...newPosts];
+      } catch (error) {
+        setAlerts({
+          title: 'Ошибка на стороне сервера',
+          text: 'Попробуйте перезагрузить страницу, чтобы подгрузить посты...',
+        });
+      } finally {
+        isLoading.value = false;
       }
-    };
-    const observer = new IntersectionObserver(callback, options);
-    observer.observe(observeRef.value);
+    }
   };
   return {
     postData,
     isLoading,
+    loadMorePost,
   };
 }

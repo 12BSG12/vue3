@@ -1,6 +1,5 @@
-import { ref, watch, onMounted } from 'vue';
+import { ref } from 'vue';
 import { defineStore } from 'pinia';
-import { useRoute, useRouter } from 'vue-router';
 
 interface IBody {
   title: string;

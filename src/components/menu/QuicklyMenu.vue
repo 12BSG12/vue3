@@ -2,7 +2,6 @@
 import { ref } from 'vue';
 
 const dialog = ref(false);
-const dialogg = ref(false);
 </script>
 
 <template>
@@ -52,10 +51,10 @@ const dialogg = ref(false);
       </a>
     </li>
     <li :class="styles.item">
-      <a :class="styles.itemInner" href="#">
+      <router-link :class="styles.itemInner" to="/internet-priemnaya">
         <img src="@/assets/email.svg" />
         Интернет-приемная
-      </a>
+      </router-link>
     </li>
   </ul>
 </template>

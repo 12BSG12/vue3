@@ -1,0 +1,42 @@
+.container {
+  @apply bg-white rounded-lg drop-shadow-lg;
+  .inner {
+    @apply p-3 relative;
+  }
+  .title {
+    @apply top-0 left-0 right-0 p-3 absolute rounded-t-lg  bg-red-500 text-white uppercase font-bold;
+  }
+  .content {
+    @apply relative mb-6 last:mb-0;
+    &:after{
+      content: '';
+      position: absolute;
+      height: 1px;
+      bottom: -12px;
+      left: 0;
+      right: 0;
+      background-color: rgba(0,0,0,.1);
+    }
+  }
+
+  .questions,
+  .answer {
+    @apply flex items-center;
+    p {
+      @apply ml-1 text-lg;
+    }
+  }
+
+  .questions {
+    @apply mb-2;
+    span {
+      @apply text-red-400;
+    }
+    
+  }
+  .answer{
+    span {
+      @apply text-lime-500;
+    }
+  }
+}

@@ -10,6 +10,11 @@ const router = createRouter({
       component: HomeView,
     },
     {
+      path: '/internet-priemnaya',
+      name: 'priemnaya',
+      component: () =>  import('../views/reception/ReceptionView.vue'),
+    },
+    {
       path: '/press-tsentr/novosti',
       name: 'novosti',
       component: () =>  import('../views/News/NewsView.vue')
