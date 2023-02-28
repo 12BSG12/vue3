@@ -5,7 +5,7 @@ const coordinates = [56.76446938396302, 54.159877347983766];
 const zoom = 17;
 const controls = ['zoomControl'];
 const detailedControls = { zoomControl: { position: { right: 10, top: 100 } } };
-const yandexApiKey = import.meta.env.VITE_RECAPTCHA_YANDEX_API_KEY;
+const yandexApiKey = import.meta.env.VITE_YANDEX_API_KEY;
 
 const settings = {
   apiKey: yandexApiKey, // Индивидуальный ключ API
