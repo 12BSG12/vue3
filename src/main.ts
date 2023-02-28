@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import { VueQueryPlugin } from '@tanstack/vue-query';
+import YmapPlugin from 'vue-yandex-maps';
 
 import App from './App.vue';
 import router from './router';
@@ -11,6 +12,7 @@ import vuetify from './plugins/vuetify';
 
 const app = createApp(App);
 
+
 directives.forEach((directive) => {
   app.directive(directive.name, directive);
 });
@@ -19,5 +21,6 @@ app.use(createPinia());
 app.use(router);
 app.use(vuetify);
 app.use(VueQueryPlugin);
+app.use(YmapPlugin);
 
 app.mount('#app');

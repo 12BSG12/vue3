@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import styles from "./footer.module.scss";
+import styles from './footer.module.scss';
 </script>
 
 <template>
@@ -14,9 +14,9 @@ import styles from "./footer.module.scss";
             >
           </li>
           <li>
-            <v-btn prepend-icon="mdi-routes " variant="text"
-              ><a href="#">Схема проезда</a></v-btn
-            >
+            <router-link to="/universitet/obshchie-svedeniya/kak-nas-naiti">
+              <v-btn prepend-icon="mdi-routes " variant="text"> Схема проезда </v-btn>
+            </router-link>
           </li>
           <li>
             <v-btn prepend-icon="mdi-clock-outline" variant="text"
@@ -35,9 +35,7 @@ import styles from "./footer.module.scss";
           </li>
           <li>
             <v-btn prepend-icon="mdi-email" variant="text"
-              ><a href="mailto:ok@pnipu.ru?subject=Вопрос"
-                >ok@pnipu.ru</a
-              ></v-btn
+              ><a href="mailto:ok@pnipu.ru?subject=Вопрос">ok@pnipu.ru</a></v-btn
             >
           </li>
         </ul>
@@ -47,9 +45,7 @@ import styles from "./footer.module.scss";
         <ul :class="styles.list">
           <li>
             <v-btn prepend-icon="mdi-information-outline" variant="text"
-              ><a href="#"
-                >Сведения об образовательной<br />организации</a
-              ></v-btn
+              ><a href="#">Сведения об образовательной<br />организации</a></v-btn
             >
           </li>
           <li>

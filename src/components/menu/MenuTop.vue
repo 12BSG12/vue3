@@ -51,7 +51,11 @@ const { scrollY } = useScroll();
             <ul class="top-[41px]" :class="styles.subMenuV2">
               <li>Миссия</li>
               <li>История</li>
-              <li>Как нас найти?</li>
+              <li>
+                <RouterLink to="/universitet/obshchie-svedeniya/kak-nas-naiti">
+                  Как нас найти?
+                </RouterLink>
+              </li>
               <li>Реквизиты</li>
               <li>Телефонный справочник ЧФ ПНИПУ</li>
             </ul>

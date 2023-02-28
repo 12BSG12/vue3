@@ -25,6 +25,11 @@ const router = createRouter({
       component: () => import('../views/post/PostView.vue'),
     },
     {
+      path: '/universitet/obshchie-svedeniya/kak-nas-naiti',
+      name: 'map',
+      component: () => import('../views/map/MapView.vue'),
+    },
+    {
       path: '/:path(.*)*',
       name: '404',
       component: () => import('@/components/404/NotFound.vue'),

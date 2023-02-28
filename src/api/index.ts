@@ -1,7 +1,7 @@
 import axios, { type AxiosResponse } from 'axios';
 
-export const baseURL = 'http://localhost:1337';
-// export const baseURL = 'https://strapi4f.onrender.com';
+// export const baseURL = 'http://localhost:1337';
+export const baseURL = 'https://strapi4f.onrender.com';
 
 const API_URL = `${baseURL}/api/`;
 

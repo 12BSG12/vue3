@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-
-const dialog = ref(false);
+import TimeTable from '../timetable/TimeTable.vue';
 </script>
 
 <template>
@@ -35,14 +33,7 @@ const dialog = ref(false);
         <img src="@/assets/calendar.svg" />
         Расписание занятий
       </span>
-      <v-dialog v-model="dialog" activator="parent" class="w-80">
-        <div class="bg-white w-full mx-auto rounded-lg h-[400px] relative p-3">
-          <h2>Расписание</h2>
-          <span class="absolute bottom-0 right-0">
-            <v-btn variant="text" @click="dialog = false">Назад</v-btn>
-          </span>
-        </div>
-      </v-dialog>
+      <TimeTable />
     </li>
     <li :class="styles.item">
       <a :class="styles.itemInner" href="#">
@@ -50,12 +41,12 @@ const dialog = ref(false);
         Электронная информационно-образовательная среда
       </a>
     </li>
-    <li :class="styles.item">
-      <router-link :class="styles.itemInner" to="/internet-priemnaya">
+    <router-link :class="styles.item" to="/internet-priemnaya">
+      <div :class="styles.itemInner">
         <img src="@/assets/email.svg" />
         Интернет-приемная
-      </router-link>
-    </li>
+      </div>
+    </router-link>
   </ul>
 </template>
 

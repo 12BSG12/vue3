@@ -39,7 +39,6 @@ const toggleForm = () => cbf.value?.toggleForm();
 .bg {
   @apply relative before:absolute bg-gray bg-opacity-10 left-0 right-0 bottom-0 top-0;
 }
-
 .wrapper {
   min-height: 100vh;
   display: grid;

@@ -4,7 +4,7 @@
     @apply py-5 px-4 bg-light-gray rounded-md transition shadow-md 
     shadow-black ease-in-out duration-200 hover:scale-105 active:scale-95 max-h-48 cursor-pointer;
     .itemInner {
-      @apply flex items-center justify-center flex-col 
+      @apply  flex items-center justify-center flex-col 
       text-center hover:animate-pulse;
       img {
         @apply w-20 h-20 mb-3;

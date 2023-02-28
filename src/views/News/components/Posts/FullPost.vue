@@ -17,7 +17,7 @@ const router = useRouter();
 
 <template>
   <CustomSpinner v-if="isLoading" :fullscreen="true" />
-  <PostContainer v-for="post in postData" :key="post.id">
+  <PostContainer v-intersection="loadMorePost" v-for="post in postData" :key="post.id">
     <div class="wrapper">
       <div class="flex flex-wrap">
         <figure class="img">
@@ -41,7 +41,6 @@ const router = useRouter();
       </div>
     </div>
   </PostContainer>
-  <div v-intersection="loadMorePost"></div>
 </template>
 
 <style scoped lang="scss">

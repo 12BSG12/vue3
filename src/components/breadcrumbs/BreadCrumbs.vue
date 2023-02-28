@@ -26,7 +26,7 @@ watch(
       const to = router.getRoutes().find((el) => el.name === item)?.path ?? ''
       
       return {
-        title: item === '' ? 'Главная' : ucFirst(CyrillicToTranslit().reverse(item)),
+        title: item === '' ? 'Главная' : ucFirst(CyrillicToTranslit({ preset: 'ru' }).reverse(item, '-')),
         to
       }
     });
