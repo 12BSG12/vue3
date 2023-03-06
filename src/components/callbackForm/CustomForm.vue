@@ -3,6 +3,14 @@ import { ref } from 'vue';
 import { VueRecaptcha } from 'vue-recaptcha';
 import type { VForm } from 'vuetify/lib/components/VForm/index';
 
+const props = defineProps({
+  withoutRecaptcha: {
+    type: Boolean,
+    default: false,
+  }
+})
+
+
 const SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
 const valid = ref(true);
@@ -36,7 +44,7 @@ const rules = ref({
 const handleSubmit = async () => {
   const valid = await formRef.value?.validate();
 
-  if (valid?.valid && recaptchaToken.value) {
+  if (valid?.valid && (recaptchaToken.value || props.withoutRecaptcha)) {
     console.log(field);
   }
 };
@@ -78,6 +86,7 @@ const handleSuccess = (response: string) => {
       required
     ></v-checkbox>
     <VueRecaptcha
+      v-if="!withoutRecaptcha"
       class="mb-4"
       :sitekey="SITE_KEY"
       @verify="handleSuccess"

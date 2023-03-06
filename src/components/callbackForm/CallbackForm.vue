@@ -19,7 +19,7 @@ defineExpose({
         <span>Обратная связь</span>
         <v-icon icon="mdi-window-close" @click="showForm = false"></v-icon>
       </div>
-      <CustomForm />
+      <CustomForm :withoutRecaptcha="true"/>
     </div>
   </Transition>
 </template>
