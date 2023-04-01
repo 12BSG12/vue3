@@ -83,10 +83,13 @@ const { scrollY } = useScroll();
         Образование
         <v-icon icon="mdi-chevron-down"></v-icon>
         <ul :class="styles.subMenu">
-          <li>Центр дополнительного образования</li>
-          <li>Довузовская подготовка</li>
+          <li>
+            <RouterLink to="/CDOS/o-nashem-tsentre"> Центр дополнительного образования </RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/obrazov/dovuzovskaya-podgotovka"> Довузовская подготовка </RouterLink>
+          </li>
           <li>Электронная информационно-образовательная среда</li>
-          <li>Подразделения</li>
         </ul>
       </li>
       <li>
@@ -96,7 +99,9 @@ const { scrollY } = useScroll();
           <li>Научные журналы</li>
           <li>Наши сборники</li>
           <li>Электронный каталог библиотеки ЧФ ПНИПУ</li>
-          <li>Научная библиотека ПНИПУ</li>
+          <li>
+            <a href="https://elib.pstu.ru/" target="_blank">Научная библиотека ПНИПУ</a>
+          </li>
         </ul>
       </li>
       <li>

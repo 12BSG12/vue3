@@ -11,6 +11,7 @@
     .list {
       @apply flex flex-col;
       button {
+        @apply text-left;
         text-transform: none;
       }
       a {

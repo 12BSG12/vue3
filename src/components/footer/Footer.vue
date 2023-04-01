@@ -44,9 +44,13 @@ import styles from './footer.module.scss';
         <h3>Полезные ссылки</h3>
         <ul :class="styles.list">
           <li>
-            <v-btn prepend-icon="mdi-information-outline" variant="text"
-              ><a href="#">Сведения об образовательной<br />организации</a></v-btn
-            >
+            <router-link to="/svedeniya-ob-obrazovatel'noiy-organizacii/osnovnye-svedeniya">
+              <v-btn prepend-icon="mdi-information-outline" variant="text">
+                <span class="whitespace-pre-wrap"
+                  >Сведения об образовательной организации</span
+                ></v-btn
+              >
+            </router-link>
           </li>
           <li>
             <v-btn prepend-icon="mdi-notebook-outline" variant="text"

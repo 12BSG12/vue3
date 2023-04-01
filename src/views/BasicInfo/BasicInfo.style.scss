@@ -1,0 +1,25 @@
+.basicInfoBody{
+  @apply mb-5;
+  h2{
+    @apply px-6 py-2 bg-gray font-bold text-center rounded-lg mb-2;
+  }
+
+  span{
+    @apply italic font-bold text-sm lg:text-base;
+  }
+
+  p{
+    @apply text-xs lg:text-base;
+  }
+  a{
+    &:hover{
+      @apply text-gray;
+    }
+  }
+  ul{
+    @apply pl-10 mt-2;
+    li{
+      @apply list-disc
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.body{
+  @apply mb-5;
+  h2{
+    @apply font-bold mb-2;
+  }
+  ul{
+    @apply pl-10 mt-2;
+    li{
+      @apply text-base list-disc text-justify;
+    }
+  }
+}
+.imgs{
+  @apply my-5 flex flex-col-reverse md:flex-row-reverse sm:justify-center items-center gap-2;
+}
