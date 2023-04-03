@@ -30,19 +30,59 @@ const router = createRouter({
       component: () => import('../views/map/MapView.vue'),
     },
     {
-      path: `/svedeniya-ob-obrazovatel'noiy-organizacii/osnovnye-svedeniya`,
+      path: `/svedeniya-ob-obrazovatelьnoй-organizaцii/osnovnye-svedeniя`,
       name: 'basicInfo',
       component: () => import('../views/BasicInfo/BasicInfo.vue'),
     },
     {
-      path: `/CDOS/o-nashem-tsentre`,
+      path: '/CDOS/o-nashem-tsentre',
       name: 'aboutOutCenter',
       component: () => import('../views/AboutOurCenter/AboutOurCenter.vue'),
     },
     {
       path: `/obrazov/dovuzovskaya-podgotovka`,
-      name: 'aboutOutCenter',
+      name: 'preUniversityTraining',
       component: () => import('../views/PreUniversityTraining/PreUniversityTraining.vue'),
+    },
+    {
+      path: `/nauka-i-innovatsii/nauchnye-zhurnaly`,
+      name: 'scientificJournals',
+      component: () => import('../views/ScientificJournals/ScientificJournals.vue'),
+    },
+    {
+      path: '/nauka-i-innovatsii/sborniki',
+      name: 'ourCollections',
+      component: () => import('../views/OurCollections/OurCollections.vue'),
+    },
+    {
+      path: '/universitet/obshchie-svedeniya/rekvizity',
+      name: 'requisites',
+      component: () => import('../views/Requisites/UnRequisites.vue'),
+    },
+    {
+      path: '/universitet/obshchie-svedeniya/missiya',
+      name: 'mission',
+      component: () => import('../views/Mission/UnMission.vue'),
+    },
+    {
+      path: '/universitet/obshchie-svedeniya/istoriya',
+      name: 'history',
+      component: () => import('../views/History/UnHistory.vue'),
+    },
+    {
+      path: '/universitet/obshchie-svedeniya/spravochnik-CHF-PNIPU',
+      name: 'phonebook',
+      component: () => import('../views/Phonebook/PhoneBook.vue'),
+    },
+    {
+      path: `/universitet/fakulьtet-tekhniki,-tekhnologii-i-upravleniya/kafedra-AIIT`,
+      name: 'departmentAIIT',
+      component: () => import('../views/Department/DepartmentAIIT.vue'),
+    },
+    {
+      path: `/universitet/fakulьtet-tekhniki,-tekhnologii-i-upravleniya/kafedra-EUP`,
+      name: 'departmentEUP',
+      component: () => import('../views/Department/DepartmentEUP.vue'),
     },
     {
       path: '/:path(.*)*',

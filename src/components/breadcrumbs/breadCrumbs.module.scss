@@ -1,5 +1,5 @@
 .list {
-  @apply flex items-center mb-2 pr-2 flex-wrap;
+  @apply hidden lg:flex items-center mb-2 pr-2 flex-wrap;
   li {
     @apply my-5 mr-2 last:mr-0  after:content-['/'] 
     after:pl-2 last:after:content-[''];

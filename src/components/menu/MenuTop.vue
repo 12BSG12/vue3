@@ -30,7 +30,11 @@ const { scrollY } = useScroll();
             Сведения об образовательной организации
             <v-icon icon="mdi-chevron-down"></v-icon>
             <ul class="top-[49px] lg:top-[65px]" :class="styles.subMenuV2">
-              <li>Основные сведения</li>
+              <li>
+                <RouterLink to="/svedeniya-ob-obrazovatelьnoй-organizaцii/osnovnye-svedeniя">
+                  Основные сведения
+                </RouterLink>
+              </li>
               <li>Структура и органы управления образовательной организацией</li>
               <li>Документы</li>
               <li>Образование</li>
@@ -49,25 +53,45 @@ const { scrollY } = useScroll();
             Общие сведения
             <v-icon icon="mdi-chevron-down"></v-icon>
             <ul class="top-[41px]" :class="styles.subMenuV2">
-              <li>Миссия</li>
-              <li>История</li>
+              <li>
+                <RouterLink to="/universitet/obshchie-svedeniya/missiya"> Миссия </RouterLink>
+              </li>
+              <li>
+                <RouterLink to="/universitet/obshchie-svedeniya/istoriya"> История </RouterLink>
+              </li>
               <li>
                 <RouterLink to="/universitet/obshchie-svedeniya/kak-nas-naiti">
                   Как нас найти?
                 </RouterLink>
               </li>
-              <li>Реквизиты</li>
-              <li>Телефонный справочник ЧФ ПНИПУ</li>
+              <li>
+                <RouterLink to="/universitet/obshchie-svedeniya/rekvizity"> Реквизиты </RouterLink>
+              </li>
+              <li>
+                <RouterLink to="/universitet/obshchie-svedeniya/spravochnik-CHF-PNIPU">
+                  Телефонный справочник ЧФ ПНИПУ
+                </RouterLink>
+              </li>
             </ul>
           </li>
           <li>
             Факультет техники, технологии и управления
             <v-icon icon="mdi-chevron-down"></v-icon>
             <ul class="top-[49px] lg:top-[65px]" :class="styles.subMenuV2">
-              <li>Кафедра 1</li>
-              <li>Кафедра 2</li>
-              <li>Кафедра 3</li>
-              <li>Кафедра 4</li>
+              <li>
+                <RouterLink
+                  to="/universitet/fakulьtet-tekhniki,-tekhnologii-i-upravleniya/kafedra-AIIT"
+                >
+                  Кафедра АИИТ
+                </RouterLink>
+              </li>
+              <li>
+                <RouterLink
+                  to="/universitet/fakulьtet-tekhniki,-tekhnologii-i-upravleniya/kafedra-EUP"
+                >
+                  Кафедра ЭУП
+                </RouterLink>
+              </li>
             </ul>
           </li>
           <li>
@@ -96,8 +120,12 @@ const { scrollY } = useScroll();
         Наука и инновации
         <v-icon icon="mdi-chevron-down"></v-icon>
         <ul :class="styles.subMenu">
-          <li>Научные журналы</li>
-          <li>Наши сборники</li>
+          <li>
+            <RouterLink to="/nauka-i-innovatsii/nauchnye-zhurnaly"> Научные журналы </RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/nauka-i-innovatsii/sborniki"> Наши сборники </RouterLink>
+          </li>
           <li>Электронный каталог библиотеки ЧФ ПНИПУ</li>
           <li>
             <a href="https://elib.pstu.ru/" target="_blank">Научная библиотека ПНИПУ</a>

@@ -72,5 +72,3 @@ import YMap from '@/components/YMap/YMap.vue';
     </div>
   </div>
 </template>
-
-<style scoped module="styles" lang="scss" src="./PreUniversityTraining.style.scss"></style>

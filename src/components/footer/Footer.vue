@@ -19,9 +19,11 @@ import styles from './footer.module.scss';
             </router-link>
           </li>
           <li>
-            <v-btn prepend-icon="mdi-clock-outline" variant="text"
-              ><a href="#">Время работы </a></v-btn
-            >
+            <router-link to="/svedeniya-ob-obrazovatelьnoй-organizaцii/osnovnye-svedeniя">
+              <v-btn prepend-icon="mdi-information-outline" variant="text">
+                <span class="whitespace-pre-wrap">Время работы</span></v-btn
+              >
+            </router-link>
           </li>
         </ul>
       </div>
@@ -44,7 +46,7 @@ import styles from './footer.module.scss';
         <h3>Полезные ссылки</h3>
         <ul :class="styles.list">
           <li>
-            <router-link to="/svedeniya-ob-obrazovatel'noiy-organizacii/osnovnye-svedeniya">
+            <router-link to="/svedeniya-ob-obrazovatelьnoй-organizaцii/osnovnye-svedeniя">
               <v-btn prepend-icon="mdi-information-outline" variant="text">
                 <span class="whitespace-pre-wrap"
                   >Сведения об образовательной организации</span
@@ -53,14 +55,18 @@ import styles from './footer.module.scss';
             </router-link>
           </li>
           <li>
-            <v-btn prepend-icon="mdi-notebook-outline" variant="text"
-              ><a href="#">Телефонный справочник ЧФ ПНИПУ</a></v-btn
-            >
+            <router-link to="/universitet/obshchie-svedeniya/spravochnik-CHF-PNIPU">
+              <v-btn prepend-icon="mdi-notebook-outline" variant="text"
+                ><a href="#">Телефонный справочник ЧФ ПНИПУ</a></v-btn
+              >
+            </router-link>
           </li>
           <li>
-            <v-btn prepend-icon="mdi-file-document-outline" variant="text"
-              ><a href="#">Реквизиты ЧФ ПНИПУ</a></v-btn
-            >
+            <router-link to="/universitet/obshchie-svedeniya/rekvizity">
+              <v-btn prepend-icon="mdi-information-outline" variant="text">
+                <span class="whitespace-pre-wrap">Реквизиты ЧФ ПНИПУ</span></v-btn
+              >
+            </router-link>
           </li>
         </ul>
       </div>

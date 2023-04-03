@@ -31,8 +31,8 @@
           </ul>
         </div>
         <div :class="styles.imgs">
-          <img src="https://via.placeholder.com/340x480"/>
-          <img src="https://via.placeholder.com/340x480"/>
+          <img src="https://via.placeholder.com/340x480" />
+          <img src="https://via.placeholder.com/340x480" />
         </div>
         <p class="text-base mb-5 text-justify">
           Слушателями нашего Центра являются люди различных возрастных и социальных групп -

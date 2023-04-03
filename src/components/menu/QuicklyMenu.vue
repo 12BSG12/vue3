@@ -4,12 +4,12 @@ import TimeTable from '../timetable/TimeTable.vue';
 
 <template>
   <ul :class="styles.menu">
-    <li :class="styles.item">
-      <a :class="styles.itemInner" href="#">
+    <router-link :class="styles.item" to="/svedeniya-ob-obrazovatelьnoй-organizaцii/osnovnye-svedeniя">
+      <div :class="styles.itemInner">
         <img src="@/assets/pc.svg" />
-        Сведение об образовательной организации
-      </a>
-    </li>
+        Сведение об образовательной организаци
+      </div>
+    </router-link>
     <li :class="styles.item">
       <a :class="styles.itemInner" href="#">
         <img src="@/assets/person.svg" />
@@ -22,12 +22,12 @@ import TimeTable from '../timetable/TimeTable.vue';
         Студенту
       </a>
     </li>
-    <li :class="styles.item">
-      <a :class="styles.itemInner" href="#">
+    <router-link :class="styles.item" to="/CDOS/o-nashem-tsentre">
+      <div :class="styles.itemInner">
         <img src="@/assets/bag.svg" />
-        Центр дополнительного образования специалистов (ЦДОС)
-      </a>
-    </li>
+        Центр дополнительного образования специалисная
+      </div>
+    </router-link>
     <li :class="styles.item">
       <span :class="styles.itemInner" href="#">
         <img src="@/assets/calendar.svg" />
