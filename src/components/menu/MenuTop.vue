@@ -137,7 +137,6 @@ const { scrollY } = useScroll();
         <v-icon icon="mdi-chevron-down"></v-icon>
         <ul :class="styles.subMenu">
           <li>Студенческий совет</li>
-          <li>Спорт</li>
         </ul>
       </li>
       <li>

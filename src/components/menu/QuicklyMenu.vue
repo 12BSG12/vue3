@@ -11,17 +11,17 @@ import TimeTable from '../timetable/TimeTable.vue';
       </div>
     </router-link>
     <li :class="styles.item">
-      <a :class="styles.itemInner" href="#">
+      <a :class="styles.itemInner" href="https://pstu.ru/enrollee/speciality/filials/chf/" target="_blank">
         <img src="@/assets/person.svg" />
         Абитуриенту
       </a>
     </li>
-    <li :class="styles.item">
-      <a :class="styles.itemInner" href="#">
+    <router-link :class="styles.item" to="/student/pamyatka">
+      <div :class="styles.itemInner">
         <img src="@/assets/student.svg" />
         Студенту
-      </a>
-    </li>
+      </div>
+    </router-link>
     <router-link :class="styles.item" to="/CDOS/o-nashem-tsentre">
       <div :class="styles.itemInner">
         <img src="@/assets/bag.svg" />
@@ -36,7 +36,7 @@ import TimeTable from '../timetable/TimeTable.vue';
       <TimeTable />
     </li>
     <li :class="styles.item">
-      <a :class="styles.itemInner" href="#">
+      <a :class="styles.itemInner" href="https://do.pstu.ru/login/index.php" target="_blank">
         <img src="@/assets/book.svg" />
         Электронная информационно-образовательная среда
       </a>

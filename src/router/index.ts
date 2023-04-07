@@ -85,6 +85,11 @@ const router = createRouter({
       component: () => import('../views/Department/DepartmentEUP.vue'),
     },
     {
+      path: `/student/pamyatka`,
+      name: 'memo',
+      component: () => import('../views/Memo/UnMemo.vue'),
+    },
+    {
       path: '/:path(.*)*',
       name: '404',
       component: () => import('@/components/404/NotFound.vue'),

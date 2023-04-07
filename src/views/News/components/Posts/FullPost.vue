@@ -16,31 +16,36 @@ const router = useRouter();
 </script>
 
 <template>
-  <CustomSpinner v-if="isLoading" :fullscreen="true" />
-  <PostContainer v-intersection="loadMorePost" v-for="post in postData" :key="post.id">
-    <div class="wrapper">
-      <div class="flex flex-wrap">
-        <figure class="img">
-          <v-img class="rounded-lg" :aspect-ratio="1" :src="post.prevImage" cover></v-img>
-        </figure>
-        <div class="postContent">
-          <RouterLink
-            :to="{ path: `press-tsentr/novosti/${post.title}` }"
-            @click="
-              router.push({ path: `/press-tsentr/novosti/${post.title}`, query: { id: post.id } })
-            "
-          >
-            <PostTitle :title="post.title" />
-          </RouterLink>
-          <v-divider></v-divider>
-          <PostInfo :tags="post.tags" :createdAt="post.createdAt" />
-          <PostSubtitle :subtitle="post.subtitle" />
-          <PostHtmlContent :content="post.content" />
-          <PostGallery :imgs="post.contentimgs" />
+  <div class="drop-shadow-lg">
+    <CustomSpinner v-if="isLoading"/>
+    <PostContainer v-intersection="loadMorePost" v-for="post in postData" :key="post.id">
+      <div class="wrapper">
+        <div class="flex flex-wrap">
+          <figure class="img">
+            <v-img class="rounded-lg" :aspect-ratio="1" :src="post.prevImage" cover></v-img>
+          </figure>
+          <div class="postContent">
+            <RouterLink
+              :to="{ path: `press-tsentr/novosti/${post.title}` }"
+              @click="
+                router.push({
+                  path: `/press-tsentr/novosti/${post.title}`,
+                  query: { id: post.id },
+                })
+              "
+            >
+              <PostTitle :title="post.title" />
+            </RouterLink>
+            <v-divider></v-divider>
+            <PostInfo :tags="post.tags" :createdAt="post.createdAt" />
+            <PostSubtitle :subtitle="post.subtitle" />
+            <PostHtmlContent :content="post.content" />
+            <PostGallery :imgs="post.contentimgs" />
+          </div>
         </div>
       </div>
-    </div>
-  </PostContainer>
+    </PostContainer>
+  </div>
 </template>
 
 <style scoped lang="scss">
