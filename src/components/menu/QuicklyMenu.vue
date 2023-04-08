@@ -4,7 +4,7 @@ import TimeTable from '../timetable/TimeTable.vue';
 
 <template>
   <ul :class="styles.menu">
-    <router-link :class="styles.item" to="/svedeniya-ob-obrazovatelьnoй-organizaцii/osnovnye-svedeniя">
+    <router-link :class="styles.item" :to='encodeURI(`/Сведения-об-образовательной-организации/Основные-сведения`)'>
       <div :class="styles.itemInner">
         <img src="@/assets/pc.svg" />
         Сведение об образовательной организаци
@@ -16,13 +16,13 @@ import TimeTable from '../timetable/TimeTable.vue';
         Абитуриенту
       </a>
     </li>
-    <router-link :class="styles.item" to="/student/pamyatka">
+    <router-link :class="styles.item" :to="encodeURI('/Студенту/Памятка')">
       <div :class="styles.itemInner">
         <img src="@/assets/student.svg" />
         Студенту
       </div>
     </router-link>
-    <router-link :class="styles.item" to="/CDOS/o-nashem-tsentre">
+    <router-link :class="styles.item" :to="encodeURI('/ЦДОС/О-нашем-центре')">
       <div :class="styles.itemInner">
         <img src="@/assets/bag.svg" />
         Центр дополнительного образования специалисная
@@ -41,7 +41,7 @@ import TimeTable from '../timetable/TimeTable.vue';
         Электронная информационно-образовательная среда
       </a>
     </li>
-    <router-link :class="styles.item" to="/internet-priemnaya">
+    <router-link :class="styles.item" :to="encodeURI('/Интернет-приемная')">
       <div :class="styles.itemInner">
         <img src="@/assets/email.svg" />
         Интернет-приемная

@@ -23,7 +23,7 @@ const { maxID } = useViewsStore();
 const handleClickOnPrevBtn = () => {
   if (!props.id) return;
   router.push({
-    path: `/press-tsentr/novosti/${props.title}`,
+    path: `${encodeURI('/Пресс-центр/Новости')}/${props.title}`,
     query: { id: props.id + 1 },
   });
 };

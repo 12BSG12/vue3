@@ -14,12 +14,12 @@ import styles from './footer.module.scss';
             >
           </li>
           <li>
-            <router-link to="/universitet/obshchie-svedeniya/kak-nas-naiti">
+            <router-link :to="encodeURI('/Университет/Общие-сведения/Как-нас-найти?')">
               <v-btn prepend-icon="mdi-routes " variant="text"> Схема проезда </v-btn>
             </router-link>
           </li>
           <li>
-            <router-link to="/svedeniya-ob-obrazovatelьnoй-organizaцii/osnovnye-svedeniя">
+            <router-link :to="encodeURI('/Сведения-об-образовательной-организации/Основные-сведения')">
               <v-btn prepend-icon="mdi-information-outline" variant="text">
                 <span class="whitespace-pre-wrap">Время работы</span></v-btn
               >
@@ -46,7 +46,7 @@ import styles from './footer.module.scss';
         <h3>Полезные ссылки</h3>
         <ul :class="styles.list">
           <li>
-            <router-link to="/svedeniya-ob-obrazovatelьnoй-organizaцii/osnovnye-svedeniя">
+            <router-link :to="encodeURI('/Сведения-об-образовательной-организации/Основные-сведения')">
               <v-btn prepend-icon="mdi-information-outline" variant="text">
                 <span class="whitespace-pre-wrap"
                   >Сведения об образовательной организации</span
@@ -55,14 +55,14 @@ import styles from './footer.module.scss';
             </router-link>
           </li>
           <li>
-            <router-link to="/universitet/obshchie-svedeniya/spravochnik-CHF-PNIPU">
+            <router-link :to="encodeURI('/Университет/Общие-сведения/Телефонный-справочник-ЧФ-ПНИПУ')">
               <v-btn prepend-icon="mdi-notebook-outline" variant="text"
                 ><a href="#">Телефонный справочник ЧФ ПНИПУ</a></v-btn
               >
             </router-link>
           </li>
           <li>
-            <router-link to="/universitet/obshchie-svedeniya/rekvizity">
+            <router-link :to="encodeURI('/Университет/Общие-сведения/Реквизиты')">
               <v-btn prepend-icon="mdi-information-outline" variant="text">
                 <span class="whitespace-pre-wrap">Реквизиты ЧФ ПНИПУ</span></v-btn
               >

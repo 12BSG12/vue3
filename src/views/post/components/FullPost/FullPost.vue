@@ -30,7 +30,7 @@ watch(
   () => data.value?.post.title,
   () => {
     if (!data.value?.post.title) return;
-    router.push({ path: `/press-tsentr/novosti/${data.value?.post.title}`, query: route.query });
+    router.push({ path: `${encodeURI('/Пресс-центр/Новости')}/${data.value?.post.title}`, query: route.query });
   },
 );
 </script>

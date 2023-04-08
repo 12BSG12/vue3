@@ -26,10 +26,10 @@ const router = useRouter();
           </figure>
           <div class="postContent">
             <RouterLink
-              :to="{ path: `press-tsentr/novosti/${post.title}` }"
+              :to="{ path: `${encodeURI('/Пресс-центр/Новости')}/${post.title}` }"
               @click="
                 router.push({
-                  path: `/press-tsentr/novosti/${post.title}`,
+                  path: `${encodeURI('/Пресс-центр/Новости')}/${post.title}`,
                   query: { id: post.id },
                 })
               "

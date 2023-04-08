@@ -17,8 +17,8 @@ const router = useRouter();
 <template>
   <div :class="styles.cart">
     <router-link
-      :to="{ path: `press-tsentr/novosti/${title}` }"
-      @click="router.push({ path: `press-tsentr/novosti/${title}`, query: { id } })"
+      :to="{ path: `${encodeURI(`/Пресс-центр/Новости/${title}`)}` }"
+      @click="router.push({ path: `${encodeURI(`/Пресс-центр/Новости/${title}`)}`, query: { id } })"
     >
       <div :class="styles.info">
         <span :class="styles.date">{{ info.date }}</span>

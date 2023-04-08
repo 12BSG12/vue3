@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import CyrillicToTranslit from 'cyrillic-to-translit-js';
 
 import styles from './breadCrumbs.module.scss';
 
@@ -22,11 +21,11 @@ const ucFirst = (str: string) => {
 watch(
   () => route.path,
   () => {
-    breadCrumbs.value = [...new Set(route.path.split('/'))].map((item) => {
+    breadCrumbs.value = [...new Set(decodeURI(route.path).split('/'))].map((item) => {
       const to = router.getRoutes().find((el) => el.name === item)?.path ?? ''
       
       return {
-        title: item === '' ? 'Главная' : ucFirst(CyrillicToTranslit({ preset: 'ru' }).reverse(item, '-')),
+        title: item === '' ? 'Главная' : ucFirst(item).replace(/-/g, ' '),
         to
       }
     });

@@ -12,7 +12,7 @@ const { minID } = useViewsStore();
 
 const handleClickOnNextBtn = () => {
   router.push({
-    path: `/press-tsentr/novosti/${props.title}`,
+    path: `${encodeURI('/Пресс-центр/Новости')}/${props.title}`,
     query: { id: props.id - 1 },
   });
 };
