@@ -21,21 +21,22 @@ const ucFirst = (str: string) => {
 watch(
   () => route.path,
   () => {
-    breadCrumbs.value = [...new Set(decodeURI(route.path).split('/'))].map((item) => {
-      const to = router.getRoutes().find((el) => el.name === item)?.path ?? ''
-      
+    breadCrumbs.value = [...new Set(route.path.split('/'))].map((item) => {
+      const to = router.getRoutes().find((el) => el.name === decodeURI(item))?.path ?? ''
+
       return {
-        title: item === '' ? 'Главная' : ucFirst(item).replace(/-/g, ' '),
+        title: item === '' ? 'Главная' : decodeURI(ucFirst(item).replace(/-/g, ' ')),
         to
       }
     });
+
   },
 );
 </script>
 
 <template>
   <ul :class="styles.list" v-if="breadCrumbs.length > 1">
-    <li v-for="(item, idx) in breadCrumbs" :key="item.title" disabled>
+    <li v-for="(item, idx) in breadCrumbs" :key="item.title">
       <router-link
         :to="item.to"
         :class="breadCrumbs.length - 1 === idx || !item.to ? styles.disabled : ''"

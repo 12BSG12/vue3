@@ -66,7 +66,7 @@ const { scrollY } = useScroll();
                 <RouterLink :to="encodeURI('/Университет/Общие-сведения/История')"> История </RouterLink>
               </li>
               <li>
-                <RouterLink :to="encodeURI('/Университет/Общие-сведения/Как-нас-найти?')">
+                <RouterLink :to="encodeURI('/Университет/Общие-сведения/Как-нас-найти')">
                   Как нас найти?
                 </RouterLink>
               </li>

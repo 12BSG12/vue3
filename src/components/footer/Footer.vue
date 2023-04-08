@@ -14,7 +14,7 @@ import styles from './footer.module.scss';
             >
           </li>
           <li>
-            <router-link :to="encodeURI('/Университет/Общие-сведения/Как-нас-найти?')">
+            <router-link :to="encodeURI('/Университет/Общие-сведения/Как-нас-найти')">
               <v-btn prepend-icon="mdi-routes " variant="text"> Схема проезда </v-btn>
             </router-link>
           </li>
