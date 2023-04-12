@@ -6,7 +6,10 @@
           СТРУКТУРА И ОРГАНЫ УПРАВЛЕНИЯ ОБРАЗОВАТЕЛЬНОЙ ОРГАНИЗАЦИЕЙ
         </h2>
         <v-divider class="mb-5"></v-divider>
-        <a class="block mb-5" href="https://pnipu.ru/images/sveden/struct/Pologenie_organ_upravl_structur_podrazd.pdf" target="_blank"
+        <a
+          class="block mb-5"
+          href="https://pnipu.ru/images/sveden/struct/Pologenie_organ_upravl_structur_podrazd.pdf"
+          target="_blank"
           ><v-icon icon="mdi-file-pdf-box" />Структура управления</a
         >
 
@@ -28,12 +31,20 @@
               <td>
                 Исполняющий обязанности директора<br />Заместитель директора по учебной работе
               </td>
-              <td>г. Чайковский, ул. Ленина, 73, каб. 22<br /> Телефон: 8 (34241) 3-44-56</td>
+              <td>
+                г. Чайковский, ул. Ленина, 73, каб. 22<br />
+                Телефон: 8 (34241) 3-44-56
+              </td>
               <td>
                 <a href="mailto:umo@pnipu.ru">umo@pnipu.ru</a>
               </td>
               <td>
-                <a class="hover:underline" href="https://pnipu.ru/images/sveden/struct/Pologenie_structur_podrazd_UCH.pdf" target="_blank">Положение (sig)</a>
+                <a
+                  class="hover:underline"
+                  href="https://pnipu.ru/images/sveden/struct/Pologenie_structur_podrazd_UCH.pdf"
+                  target="_blank"
+                  >Положение (sig)</a
+                >
               </td>
             </tr>
           </tbody>

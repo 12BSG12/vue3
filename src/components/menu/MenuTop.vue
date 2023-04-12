@@ -14,7 +14,7 @@ const { scrollY } = useScroll();
 </script>
 
 <template>
-  <div :class="[styles.positionMenu, { fixedMenu: scrollY >= 300 }]" ref="container">
+  <div :class="[styles.positionMenu, { fixedMenu: scrollY >= 280 }]" ref="container">
     <div :class="styles.burger" @click="isActive = !isActive">
       <v-btn icon="mdi-menu"></v-btn>
     </div>
@@ -31,19 +31,33 @@ const { scrollY } = useScroll();
             <v-icon icon="mdi-chevron-down"></v-icon>
             <ul class="top-[49px] lg:top-[65px]" :class="styles.subMenuV2">
               <li>
-                <RouterLink :to='encodeURI(`/Сведения-об-образовательной-организации/Основные-сведения`)'>
+                <RouterLink
+                  :to="encodeURI(`/Сведения-об-образовательной-организации/Основные-сведения`)"
+                >
                   Основные сведения
                 </RouterLink>
               </li>
               <li>
                 <RouterLink
-                  :to='encodeURI(`/Сведения-об-образовательной-организации/Структура-и-органы-управления-образовательной-организацией`)'
+                  :to="
+                    encodeURI(
+                      `/Сведения-об-образовательной-организации/Структура-и-органы-управления-образовательной-организацией`,
+                    )
+                  "
                 >
                   Структура и органы управления образовательной организацией
                 </RouterLink>
               </li>
-              <li>Документы</li>
-              <li>Образование</li>
+              <li>
+                <RouterLink :to="encodeURI('/Сведения-об-образовательной-организации/Документы')">
+                  Докумениы
+                </RouterLink>
+              </li>
+              <li>
+                <RouterLink :to="encodeURI('/Сведения-об-образовательной-организации/Образование')">
+                  Образование
+                </RouterLink>
+              </li>
               <li>Образовательные стандарты и требования</li>
               <li>Руководство. Педагогический (научно-педагогический) состав</li>
               <li>Материально-техническое обеспечение и оснащенность образовательного процесса</li>
@@ -60,10 +74,14 @@ const { scrollY } = useScroll();
             <v-icon icon="mdi-chevron-down"></v-icon>
             <ul class="top-[41px]" :class="styles.subMenuV2">
               <li>
-                <RouterLink :to="encodeURI('/Университет/Общие-сведения/Миссия')"> Миссия </RouterLink>
+                <RouterLink :to="encodeURI('/Университет/Общие-сведения/Миссия')">
+                  Миссия
+                </RouterLink>
               </li>
               <li>
-                <RouterLink :to="encodeURI('/Университет/Общие-сведения/История')"> История </RouterLink>
+                <RouterLink :to="encodeURI('/Университет/Общие-сведения/История')">
+                  История
+                </RouterLink>
               </li>
               <li>
                 <RouterLink :to="encodeURI('/Университет/Общие-сведения/Как-нас-найти')">
@@ -71,10 +89,14 @@ const { scrollY } = useScroll();
                 </RouterLink>
               </li>
               <li>
-                <RouterLink :to="encodeURI('/Университет/Общие-сведения/Реквизиты')"> Реквизиты </RouterLink>
+                <RouterLink :to="encodeURI('/Университет/Общие-сведения/Реквизиты')">
+                  Реквизиты
+                </RouterLink>
               </li>
               <li>
-                <RouterLink :to="encodeURI('/Университет/Общие-сведения/Телефонный-справочник-ЧФ-ПНИПУ')">
+                <RouterLink
+                  :to="encodeURI('/Университет/Общие-сведения/Телефонный-справочник-ЧФ-ПНИПУ')"
+                >
                   Телефонный справочник ЧФ ПНИПУ
                 </RouterLink>
               </li>
@@ -86,14 +108,20 @@ const { scrollY } = useScroll();
             <ul class="top-[49px] lg:top-[65px]" :class="styles.subMenuV2">
               <li>
                 <RouterLink
-                  :to="encodeURI('/Университет/Факультет-техники,-технологии-и-управления/Кафедра-АИИТ')"
+                  :to="
+                    encodeURI(
+                      '/Университет/Факультет-техники,-технологии-и-управления/Кафедра-АИИТ',
+                    )
+                  "
                 >
                   Кафедра АИИТ
                 </RouterLink>
               </li>
               <li>
                 <RouterLink
-                  :to="encodeURI('/Университет/Факультет-техники,-технологии-и-управления/Кафедра-ЕУП')"
+                  :to="
+                    encodeURI('/Университет/Факультет-техники,-технологии-и-управления/Кафедра-ЕУП')
+                  "
                 >
                   Кафедра ЭУП
                 </RouterLink>
@@ -114,10 +142,14 @@ const { scrollY } = useScroll();
         <v-icon icon="mdi-chevron-down"></v-icon>
         <ul :class="styles.subMenu">
           <li>
-            <RouterLink :to="encodeURI('/ЦДОС/О-нашем-центре')"> Центр дополнительного образования </RouterLink>
+            <RouterLink :to="encodeURI('/ЦДОС/О-нашем-центре')">
+              Центр дополнительного образования
+            </RouterLink>
           </li>
           <li>
-            <RouterLink :to="encodeURI('/Образование/Довузовская-подготовка')"> Довузовская подготовка </RouterLink>
+            <RouterLink :to="encodeURI('/Образование/Довузовская-подготовка')">
+              Довузовская подготовка
+            </RouterLink>
           </li>
           <li>
             <a href="https://do.pstu.ru/login/index.php" target="_blank"
@@ -131,10 +163,14 @@ const { scrollY } = useScroll();
         <v-icon icon="mdi-chevron-down"></v-icon>
         <ul :class="styles.subMenu">
           <li>
-            <RouterLink :to="encodeURI('/Наука-и-инновации/Научные-журналы')"> Научные журналы </RouterLink>
+            <RouterLink :to="encodeURI('/Наука-и-инновации/Научные-журналы')">
+              Научные журналы
+            </RouterLink>
           </li>
           <li>
-            <RouterLink :to="encodeURI('/Наука-и-инновации/Наши-сборники')"> Наши сборники </RouterLink>
+            <RouterLink :to="encodeURI('/Наука-и-инновации/Наши-сборники')">
+              Наши сборники
+            </RouterLink>
           </li>
           <li>Электронный каталог библиотеки ЧФ ПНИПУ</li>
           <li>

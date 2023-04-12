@@ -28,7 +28,7 @@ const toggleForm = () => cbf.value?.toggleForm();
         <RouterView />
       </div>
       <BottomBtn :toggleForm="toggleForm" :isShow="cbf?.showForm" />
-      <CallbackForm ref="cbf"/>
+      <CallbackForm ref="cbf" />
       <MyAlert />
       <Footer />
     </div>

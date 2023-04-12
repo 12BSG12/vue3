@@ -1,0 +1,12 @@
+ul {
+  @apply mb-5;
+  li {
+    @apply my-5;
+  }
+}
+
+a{
+  &:hover{
+    @apply text-gray; 
+  }
+}

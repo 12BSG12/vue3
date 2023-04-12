@@ -95,6 +95,16 @@ const router = createRouter({
       component: () => import('../views/StructureAndManagement/StructureAndManagement.vue'),
     },
     {
+      path: `${encodeURI('/Сведения-об-образовательной-организации/Документы')}`,
+      name: 'Документы',
+      component: () => import('../views/Documentation/UnDocumentation.vue'),
+    },
+    {
+      path: `${encodeURI('/Сведения-об-образовательной-организации/Образование')}`,
+      name: 'Образование',
+      component: () => import('../views/Eeducation/UnEducation.vue'),
+    },
+    {
       path: '/:path(.*)*',
       name: '404',
       component: () => import('@/components/404/NotFound.vue'),
