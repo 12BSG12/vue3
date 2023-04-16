@@ -105,6 +105,16 @@ const router = createRouter({
       component: () => import('../views/Eeducation/UnEducation.vue'),
     },
     {
+      path: `${encodeURI('/Сведения-об-образовательной-организации/Руководство.-Педагогический-(научно-педагогический)-состав')}`,
+      name: 'Руководство.-Педагогический-(научно-педагогический)-состав',
+      component: () => import('../views/Employees/UnEmployees.vue'),
+    },
+    {
+      path: `${encodeURI('/Сведения-об-образовательной-организации/Образовательные-стандарты-и-требования')}`,
+      name: 'Образовательные-стандарты-и-требования',
+      component: () => import('../views/EducationalStandardsAndRequirements/EducationalStandardsAndRequirements.vue'),
+    },
+    {
       path: '/:path(.*)*',
       name: '404',
       component: () => import('@/components/404/NotFound.vue'),

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import styles from './menuTop.module.scss';
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { RouterLink } from 'vue-router';
 import { useOnClickOutside } from '@/hooks/useOnClickOutside';
 import { useScroll } from '@/hooks/useScroll';
@@ -14,7 +14,7 @@ const { scrollY } = useScroll();
 </script>
 
 <template>
-  <div :class="[styles.positionMenu, { fixedMenu: scrollY >= 280 }]" ref="container">
+  <div :class="[styles.positionMenu, { fixedMenu: scrollY >= 224 }]" ref="container">
     <div :class="styles.burger" @click="isActive = !isActive">
       <v-btn icon="mdi-menu"></v-btn>
     </div>
@@ -58,8 +58,28 @@ const { scrollY } = useScroll();
                   Образование
                 </RouterLink>
               </li>
-              <li>Образовательные стандарты и требования</li>
-              <li>Руководство. Педагогический (научно-педагогический) состав</li>
+              <li>
+                <RouterLink
+                  :to="
+                    encodeURI(
+                      '/Сведения-об-образовательной-организации/Образовательные-стандарты-и-требования',
+                    )
+                  "
+                >
+                  Образовательные стандарты и требования
+                </RouterLink>
+              </li>
+              <li>
+                <RouterLink
+                  :to="
+                    encodeURI(
+                      '/Сведения-об-образовательной-организации/Руководство.-Педагогический-(научно-педагогический)-состав',
+                    )
+                  "
+                >
+                  Руководство. Педагогический (научно-педагогический) состав
+                </RouterLink>
+              </li>
               <li>Материально-техническое обеспечение и оснащенность образовательного процесса</li>
               <li>Стипендии и меры поддержки обучающихся</li>
               <li>Платные образовательные услуги</li>
@@ -195,9 +215,9 @@ const { scrollY } = useScroll();
           <li>
             <a href="https://vk.com/chf_pnipu" target="_blank"> Фотогалерея </a>
           </li>
-          <RouterLink :to="encodeURI('/Пресс-центр/Новости')">
-            <li>Новости</li>
-          </RouterLink>
+          <li>
+            <RouterLink :to="encodeURI('/Пресс-центр/Новости')"> Новости </RouterLink>
+          </li>
         </ul>
       </li>
     </ul>
@@ -209,7 +229,7 @@ const { scrollY } = useScroll();
   @apply right-0;
 }
 .fixedMenu {
-  @apply fixed top-2 right-2 left-0 sm:animate-show md:right-0
+  @apply fixed top-2 right-2 left-2 sm:animate-show md:right-2
   max-w-screen-2xl m-auto z-50;
 }
 @keyframes show {

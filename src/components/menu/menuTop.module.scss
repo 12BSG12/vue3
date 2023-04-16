@@ -16,7 +16,7 @@
         @apply lg:rounded-b-none;
       }
       .subMenu {
-        @apply opacity-100 visible;
+        @apply opacity-100 visible z-50;
         li {
           @apply lg:first:rounded-t-none;
           &:hover {
@@ -53,5 +53,8 @@
         }
       }
     }
+  }
+  a {
+    @apply w-full;
   }
 }
