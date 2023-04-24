@@ -12,7 +12,7 @@ async function findAll(page: number) {
     {
       pagination: {
         page,
-        pageSize: 9,
+        pageSize: 3,
       },
     },
     {

@@ -8,7 +8,7 @@
 .title {
   @apply flex justify-between items-center mb-4;
   h1 {
-    @apply uppercase text-xl font-bold w-56 break-words sm:w-0 sm:break-normal;
+    @apply uppercase text-xl font-bold pr-3;
   }
   button {
     @apply bg-gray;
@@ -40,6 +40,6 @@
   }
 }
 
-.subtitle{
+.subtitle {
   @apply text-center mb-4 font-bold text-lg;
 }

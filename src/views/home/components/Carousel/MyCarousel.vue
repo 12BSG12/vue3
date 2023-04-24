@@ -18,7 +18,7 @@ const { data, isLoading, isSuccess } = useSlides();
   >
     <v-carousel-item v-for="slide in data?.slides" :key="slide.id">
       <div :class="styles.carouselItem">
-        <CarouselItem :title="slide.title" :img-src="slide.img" :href="slide.link" />
+        <CarouselItem :title="slide.title" :img-src="slide.img" :href="encodeURI(slide.link)" />
       </div>
     </v-carousel-item>
   </v-carousel>

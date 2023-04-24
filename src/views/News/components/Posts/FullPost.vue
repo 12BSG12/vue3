@@ -17,8 +17,8 @@ const router = useRouter();
 
 <template>
   <div class="drop-shadow-lg">
-    <CustomSpinner v-if="isLoading"/>
-    <PostContainer v-intersection="loadMorePost" v-for="post in postData" :key="post.id">
+    <CustomSpinner v-if="isLoading" />
+    <PostContainer v-for="post in postData" :key="post.id">
       <div class="wrapper">
         <div class="flex flex-wrap">
           <figure class="img">
@@ -45,6 +45,7 @@ const router = useRouter();
         </div>
       </div>
     </PostContainer>
+    <div v-intersection="loadMorePost"></div>
   </div>
 </template>
 

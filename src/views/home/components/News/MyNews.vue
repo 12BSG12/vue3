@@ -41,7 +41,7 @@ watch(width, (newValue) => {
         </template>
       </div>
     </div>
-    <div :class="styles.pagination" v-if="(data?.meta.pagination.total ?? 1) > 9">
+    <div :class="styles.pagination" v-if="(data?.meta.pagination.total ?? 1) > 3">
       <v-pagination
         v-model="page"
         :length="data?.meta.pagination.pageCount"
