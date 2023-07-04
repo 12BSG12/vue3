@@ -10,8 +10,7 @@ const props = defineProps({
     default: false,
   },
   toggleForm: {
-    type: Function,
-    required: true
+    type: Function
   }
 })
 
@@ -61,7 +60,7 @@ const handleSubmit = async () => {
       }
     );
 
-    props.toggleForm();
+    props.toggleForm!();
 
     field.value.name = "";
     field.value.email = "";
