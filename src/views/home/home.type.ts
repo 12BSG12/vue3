@@ -29,8 +29,8 @@ interface IAttributes {
   subtitle?: string;
   content?: string;
   tags?: string[];
-  img: IImg;
-  contentimgs?: {
+  prevImg: IImg;
+  gallery?: {
     data: {
       attributes: {
         url: string;

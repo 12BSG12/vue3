@@ -2,9 +2,9 @@ export interface IBanners {
   data: {
     id: number;
     attributes: {
-      imgsAndUrl: {
+      imgAndUrl: {
         img: string;
-        link: string;
+        url: string;
       }[];
     };
   }[];
@@ -13,9 +13,9 @@ export interface IBanners {
 export interface INewBanners {
   banners: {
     id: number;
-    imgsAndUrl: {
+    imgAndUrl: {
       img: string;
-      link: string;
+      url: string;
     }[];
   }[];
 }

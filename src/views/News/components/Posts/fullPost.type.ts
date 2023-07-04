@@ -13,5 +13,5 @@ export interface IPostData {
   createdAt: string;
   tags?: string[];
   prevImage: string;
-  contentimgs?: { src: string }[];
+  gallery?: { src: string }[];
 }

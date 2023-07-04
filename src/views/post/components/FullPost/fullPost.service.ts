@@ -23,7 +23,7 @@ function selectPost(data: IPost) {
       content: data.data.attributes.content,
       createdAt: dataTime,
       tags: data.data.attributes.tags,
-      contentimgs: data.data.attributes.contentimgs?.data?.map(
+      gallery: data.data.attributes.gallery?.data?.map(
         (img) => ({src: img.attributes.url}),
       ),
     },

@@ -48,7 +48,7 @@ watch(
     />
     <PostSubtitle :subtitle="data?.post.subtitle" :isLoading="isLoading" :isSuccess="isSuccess" />
     <PostHtmlContent :content="data?.post.content" :isLoading="isLoading" :isSuccess="isSuccess" />
-    <PostGallery :imgs="data?.post.contentimgs" :isLoading="isLoading" :isSuccess="isSuccess" />
+    <PostGallery :imgs="data?.post.gallery" :isLoading="isLoading" :isSuccess="isSuccess" />
     <PostNextBtn :id="id" :title="data?.post.title" />
   </PostContainer>
 </template>

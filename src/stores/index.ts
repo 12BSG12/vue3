@@ -1,9 +1,10 @@
-import { ref } from 'vue';
+import { watch, ref } from 'vue';
 import { defineStore } from 'pinia';
 
 interface IBody {
   title: string;
   text: string;
+  status: "error" | "success"
 }
 
 export const useViewsStore = defineStore('views', () => {
@@ -21,6 +22,11 @@ export const useViewsStore = defineStore('views', () => {
   const setAlerts = (body: IBody) => {
     alertsData.value.push(body);
   };
+
+  watch(alertsData.value, () => {
+    setTimeout(() => alertsData.value.length = 0, 5000)
+  });
+
   return {
     minID,
     maxID,

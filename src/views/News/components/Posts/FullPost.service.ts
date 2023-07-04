@@ -1,5 +1,5 @@
 import { useViewsStore } from '@/stores';
-import { extractData, instance } from '@/api';
+import { baseURL, extractData, instance } from '@/api';
 import type { IPosts } from '@/views/home/home.type';
 import { type Ref, ref, onMounted } from 'vue';
 import type { IPostData } from './fullPost.type';
@@ -20,7 +20,8 @@ function findAll(page: number = 1) {
   return extractData(instance.get<IPosts>(`posts?populate=*&sort=createdAt:DESC&${query}`));
 }
 
-function selectPosts(data: IPosts) {
+function selectPosts(data: IPosts) {  
+
   const res = data.data.map((post) => {
     const dataTime = new Date(post.attributes.createdAt).toLocaleString('ru', {
       year: 'numeric',
@@ -33,17 +34,17 @@ function selectPosts(data: IPosts) {
       subtitle: post.attributes.subtitle,
       content: post.attributes.content,
       createdAt: dataTime,
-      tags: post.attributes.tags,
-      prevImage: post.attributes.img.data.attributes.url,
+      prevImage: post.attributes.prevImg.data.attributes.url,
       info: {
         date: dataTime[0],
         month: dataTime[1].slice(0, 3),
       },
-      contentimgs: post.attributes.contentimgs?.data?.map((img) => ({
+      gallery: post.attributes.gallery?.data?.map((img) => ({
         src: img.attributes.url,
       })),
     };
   });
+
   return {
     posts: res,
     meta: data.meta,
@@ -74,6 +75,7 @@ export function useLoadMorePosts() {
       }
     } catch (error) {
       setAlerts({
+        status: "error",
         title: 'Ошибка на стороне сервера',
         text: 'Попробуйте перезагрузить страницу, чтобы подгрузить посты...',
       });
@@ -92,6 +94,7 @@ export function useLoadMorePosts() {
         postData.value = [...postData.value, ...newPosts];
       } catch (error) {
         setAlerts({
+          status: "error",
           title: 'Ошибка на стороне сервера',
           text: 'Попробуйте перезагрузить страницу, чтобы подгрузить посты...',
         });

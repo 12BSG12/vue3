@@ -1,17 +1,22 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { VueRecaptcha } from 'vue-recaptcha';
-import type { VForm } from 'vuetify/lib/components/VForm/index';
+import type { VForm } from 'vuetify/lib/components/index.mjs';
+import { useSendMail } from './CallbackForm.service'
 
 const props = defineProps({
   withoutRecaptcha: {
     type: Boolean,
     default: false,
+  },
+  toggleForm: {
+    type: Function,
+    required: true
   }
 })
 
-
 const SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+const EMAIL_TO = import.meta.env.VITE_EMAIL_TO;
 
 const valid = ref(true);
 const formRef = ref<InstanceType<typeof VForm> | null>(null);
@@ -29,7 +34,7 @@ const field = ref({
 const rules = ref({
   nameRules: [
     (v: string) => !!v || 'Обязательно для заполнения',
-    (v: string) => (v && v.length <= 20) || 'Максимальная длина 20 символов',
+    (v: string) => (v && v.length <= 30) || 'Максимальная длина 20 символов',
   ],
   emailRules: [
     (v: string) => !!v || 'Обязательно для заполнения',
@@ -37,17 +42,33 @@ const rules = ref({
   ],
   messagesRules: [
     (v: string) => !!v || 'Обязательно для заполнения',
-    (v: string) => (v && v.length <= 200) || 'Максимальная длина 200 символов',
+    (v: string) => (v && v.length <= 1000) || 'Максимальная длина 200 символов',
   ],
 });
+
+const { mutate } = useSendMail();
 
 const handleSubmit = async () => {
   const valid = await formRef.value?.validate();
 
   if (valid?.valid && (recaptchaToken.value || props.withoutRecaptcha)) {
-    console.log(field);
+    mutate(
+      {
+        name: field.value.name,
+        emailFrom: field.value.email,
+        emailTo: EMAIL_TO,
+        message: field.value.message
+      }
+    );
+
+    props.toggleForm();
+
+    field.value.name = "";
+    field.value.email = "";
+    field.value.message = "";
   }
 };
+
 
 const handleSuccess = (response: string) => {
   recaptchaToken.value = response;

@@ -6,6 +6,6 @@ export interface INewPost {
     content?: string
     createdAt: string
     tags?: string[]
-    contentimgs?: {src: string}[]
+    gallery?: {src: string}[]
   },
 }

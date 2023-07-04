@@ -19,7 +19,7 @@
   ul{
     @apply pl-10 mt-2;
     li{
-      @apply list-disc
+      @apply list-disc mb-2 last:mb-0
     }
   }
 }

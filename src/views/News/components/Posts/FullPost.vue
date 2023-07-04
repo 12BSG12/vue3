@@ -40,7 +40,7 @@ const router = useRouter();
             <PostInfo :tags="post.tags" :createdAt="post.createdAt" />
             <PostSubtitle :subtitle="post.subtitle" />
             <PostHtmlContent :content="post.content" />
-            <PostGallery :imgs="post.contentimgs" />
+            <PostGallery :imgs="post.gallery" />
           </div>
         </div>
       </div>

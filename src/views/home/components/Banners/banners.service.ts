@@ -12,7 +12,7 @@ function selectBanners(data: IBanners) {
   const res = data.data.map((banner) => {
     return {
       id: banner.id,
-      imgsAndUrl: banner.attributes.imgsAndUrl,
+      imgAndUrl: banner.attributes.imgAndUrl,
     };
   });
   return {
@@ -29,8 +29,9 @@ export function useBanners() {
     {
       select: (data) => selectBanners(data),
       onError: () => setAlerts({
+        status: "error",
         title: 'Ошибка на стороне сервера',
-        text: 'Попробуйте перезагрузить страницу, чтобы подгрузить слайды...'
+        text: 'Попробуйте перезагрузить страницу, чтобы подгрузить баннеры...'
       })
     },
   );

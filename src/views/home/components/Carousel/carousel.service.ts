@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/vue-query";
 import type { ISlides, INewSlides } from "./carousel.type";
 
 async function findAll() {
-  return extractData(instance.get<ISlides>('slides?populate=*'));
+  return extractData(instance.get<ISlides>('Slids?populate=*'));
 }
 
 function selectSlides(data: ISlides) {
@@ -31,6 +31,7 @@ export function useSlides() {
     {
       select: (data) => selectSlides(data),
       onError: () => setAlerts({
+        status: "error",
         title: 'Ошибка на стороне сервера',
         text: 'Попробуйте перезагрузить страницу, чтобы подгрузить баннеры...'
       })

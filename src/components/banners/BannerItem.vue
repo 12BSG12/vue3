@@ -1,8 +1,8 @@
 <script setup lang="ts">
 defineProps<{
-  imgsAndUrl: {
+  imgAndUrl: {
     img: string;
-    link: string;
+    url: string;
   }[];
 }>();
 </script>
@@ -15,8 +15,8 @@ defineProps<{
     :show-arrows="false"
     hide-delimiter-background
   >
-    <v-carousel-item :src="item.img" v-for="item in imgsAndUrl" :key="item.img" cover>
-      <a :href="item.link" target="_blank" />
+    <v-carousel-item :src="item.img" v-for="item in imgAndUrl" :key="item.img" cover>
+      <a :href="item.url" target="_blank" />
     </v-carousel-item>
   </v-carousel>
 </template>

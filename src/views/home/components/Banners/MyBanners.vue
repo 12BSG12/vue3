@@ -13,7 +13,7 @@ const { data, isLoading, isSuccess } = useBanners();
       <BannerItem
         v-for="banner in data?.banners"
         :key="banner.id"
-        :imgsAndUrl="banner.imgsAndUrl"
+        :imgAndUrl="banner.imgAndUrl"
       />
     </template>
   </div>

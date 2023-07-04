@@ -39,8 +39,9 @@ export function useAnswersOnQuestions() {
       pageCount.value = response.meta.pagination.pageCount;
     } catch (error) {
       setAlerts({
+        status: "error",
         title: 'Ошибка на стороне сервера',
-        text: 'Попробуйте перезагрузить страницу, чтобы подгрузить посты...',
+        text: 'Попробуйте перезагрузить страницу...',
       });
     } finally {
       isLoading.value = false;
@@ -59,8 +60,9 @@ export function useAnswersOnQuestions() {
         ];
       } catch (error) {
         setAlerts({
+          status: "error",
           title: 'Ошибка на стороне сервера',
-          text: 'Попробуйте перезагрузить страницу, чтобы подгрузить посты...',
+          text: 'Попробуйте перезагрузить страницу...',
         });
       } finally {
         isLoading.value = false;

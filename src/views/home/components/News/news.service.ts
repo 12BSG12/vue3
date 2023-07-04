@@ -34,7 +34,7 @@ function selectPosts(data: IPosts) {
     return {
       id: post.id,
       title: post.attributes.title,
-      img: post.attributes.img.data.attributes.url,
+      img: post.attributes.prevImg.data.attributes.url,
       info: {
         date: dataTime[0],
         month: dataTime[1].slice(0, 3),
@@ -56,6 +56,7 @@ export function usePosts(page: Ref<number>) {
       select: (data) => selectPosts(data),
       onSuccess: (data) => setMinAndMaxId(data.posts.map((post) => post.id)),
       onError: () => setAlerts({
+        status: "error",
         title: 'Ошибка на стороне сервера',
         text: 'Попробуйте перезагрузить страницу, чтобы подгрузить посты...'
       })
