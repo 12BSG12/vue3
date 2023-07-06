@@ -50,7 +50,7 @@ const { mutate } = useSendMail();
 const handleSubmit = async () => {
   const valid = await formRef.value?.validate();
 
-  if (valid?.valid && (recaptchaToken.value || props.withoutRecaptcha)) {
+  if (valid?.valid) {
     mutate(
       {
         name: field.value.name,
@@ -59,12 +59,11 @@ const handleSubmit = async () => {
         message: field.value.message
       }
     );
-
-    props.toggleForm!();
-
     field.value.name = "";
     field.value.email = "";
     field.value.message = "";
+
+    props.toggleForm!();
   }
 };
 
