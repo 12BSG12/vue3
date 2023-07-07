@@ -50,7 +50,7 @@ const { scrollY } = useScroll();
               </li>
               <li>
                 <RouterLink :to="encodeURI('/Сведения-об-образовательной-организации/Документы')">
-                  Докумениы
+                  Документы
                 </RouterLink>
               </li>
               <li>
